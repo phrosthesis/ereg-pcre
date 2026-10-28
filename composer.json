@@ -7,10 +7,13 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Alexey Tsarkov",
-            "email": "alex.tsarkov@gmail.com"
+            "name": "Alexey Tsarkov"
         }
     ],
+    "support": {
+        "issues": "https://github.com/phrosthesis/ereg-pcre/issues",
+        "source": "https://github.com/phrosthesis/ereg-pcre"
+    },
     "autoload": {
         "psr-4": {
             "Phrosthesis\\Ereg\\": "src/"
