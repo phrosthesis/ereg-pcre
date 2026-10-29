@@ -68,12 +68,18 @@ final class Regex
         $matches = [];
         $result = \preg_match($this->toPcre(), $string, $matches);
 
-        if ($result === 1) {
-            $regs = $matches;
-            return \strlen($matches[0]) ?: 1;
+        if ($result !== 1) {
+            return false;
         }
 
-        return false;
+        $result = \strlen($matches[0]);
+        if (\func_num_args() > 1) {
+            $regs = $matches;
+        } else {
+            $result = 1;
+        }
+
+        return $result ?: 1;
     }
 
     /**

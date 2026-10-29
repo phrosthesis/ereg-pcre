@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @see https://php-legacy-docs.zend.com/manual/php5/en/book.regex
  */
 
-use Phrosthesis\Ereg\PcreLimb;
+use Phrosthesis\Ereg\Regex;
 
 if (!function_exists('ereg')) {
     /**
@@ -22,9 +22,14 @@ if (!function_exists('ereg')) {
      */
     function ereg(string $pattern, string $string, &$regs = null)
     {
-        PcreLimb::scream(__FUNCTION__);
+        \trigger_error('Function ereg() is deprecated', \E_USER_DEPRECATED);
 
-        return PcreLimb::createRegex($pattern)->match($string, $regs);
+        $regex = new Regex($pattern);
+        if (\func_num_args() === 2) {
+            return $regex->match($string);
+        }
+
+        return $regex->match($string, $regs);
     }
 }
 
@@ -40,9 +45,14 @@ if (!function_exists('eregi')) {
      */
     function eregi(string $pattern, string $string, &$regs = null)
     {
-        PcreLimb::scream(__FUNCTION__);
+        \trigger_error('Function eregi() is deprecated', \E_USER_DEPRECATED);
 
-        return PcreLimb::createRegex($pattern, 'i')->match($string, $regs);
+        $regex = new Regex($pattern, 'i');
+        if (\func_num_args() === 2) {
+            return $regex->match($string);
+        }
+
+        return $regex->match($string, $regs);
     }
 }
 
@@ -57,9 +67,11 @@ if (!function_exists('ereg_replace')) {
      */
     function ereg_replace(string $pattern, string $replacement, string $string)
     {
-        PcreLimb::scream(__FUNCTION__);
+        \trigger_error('Function ereg_replace() is deprecated', \E_USER_DEPRECATED);
 
-        return PcreLimb::createRegex($pattern)->replace($replacement, $string);
+        $regex = new Regex($pattern);
+
+        return $regex->replace($replacement, $string);
     }
 }
 
@@ -74,9 +86,11 @@ if (!function_exists('eregi_replace')) {
      */
     function eregi_replace(string $pattern, string $replacement, string $string)
     {
-        PcreLimb::scream(__FUNCTION__);
+        \trigger_error('Function eregi_replace() is deprecated', \E_USER_DEPRECATED);
 
-        return PcreLimb::createRegex($pattern, 'i')->replace($replacement, $string);
+        $regex = new Regex($pattern, 'i');
+
+        return $regex->replace($replacement, $string);
     }
 }
 
@@ -91,9 +105,11 @@ if (!function_exists('split')) {
      */
     function split(string $pattern, string $string, int $limit = -1)
     {
-        PcreLimb::scream(__FUNCTION__);
+        \trigger_error('Function split() is deprecated', \E_USER_DEPRECATED);
 
-        return PcreLimb::createRegex($pattern)->split($string, $limit);
+        $regex = new Regex($pattern);
+
+        return $regex->split($string, $limit);
     }
 }
 
@@ -106,9 +122,11 @@ if (!function_exists('spliti')) {
      */
     function spliti(string $pattern, string $string, int $limit = -1)
     {
-        PcreLimb::scream(__FUNCTION__);
+        \trigger_error('Function spliti() is deprecated', \E_USER_DEPRECATED);
 
-        return PcreLimb::createRegex($pattern, 'i')->split($string, $limit);
+        $regex = new Regex($pattern, 'i');
+
+        return $regex->split($string, $limit);
     }
 }
 
@@ -120,8 +138,10 @@ if (!function_exists('sql_regcase')) {
      */
     function sql_regcase(string $string): string
     {
-        PcreLimb::scream(__FUNCTION__);
+        \trigger_error('Function sql_regcase() is deprecated', \E_USER_DEPRECATED);
 
-        return PcreLimb::createRegex($string)->toCaseInsensitive();
+        $regex = new Regex($string);
+
+        return $regex->toCaseInsensitive();
     }
 }
