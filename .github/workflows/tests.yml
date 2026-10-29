@@ -35,6 +35,7 @@ jobs:
 
       - name: Run tests
         env:
-          TRAVIS: 1
+          NO_INTERACTION: 1
+          TEST_PHP_EXECUTABLE: php
           TEST_PHP_JUNIT: junit.xml
         run: composer run-tests
