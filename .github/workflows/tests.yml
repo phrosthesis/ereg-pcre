@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    fail-fast: false
     strategy:
       matrix:
         php-version: [
@@ -35,9 +36,8 @@ jobs:
       - name: Run tests
         env:
           NO_INTERACTION: 1
-          TEST_PHP_EXECUTABLE: /usr/bin/php
           TEST_PHP_JUNIT: junit-${{ matrix.php-version }}.xml
-        run: php run-tests.php -d auto_prepend_file=vendor/autoload.php
+        run: php run-tests.php -P -d auto_prepend_file=vendor/autoload.php
 
       - name: Upload test results
         uses: actions/upload-artifact@v7

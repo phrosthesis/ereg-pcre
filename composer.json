@@ -37,7 +37,7 @@
     "scripts": {
         "run-tests": [
             "Composer\\Config::disableProcessTimeout",
-            "@php run-tests.php -d auto_prepend_file=vendor/autoload.php"
+            "@php run-tests.php -P -d auto_prepend_file=vendor/autoload.php"
         ]
     },
     "scripts-aliases": {
