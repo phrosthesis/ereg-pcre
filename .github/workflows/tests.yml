@@ -31,7 +31,7 @@ jobs:
         uses: ramsey/composer-install@v4
 
       - name: Download tests runner
-        run: curl -qO "https://github.com/php/php-src/raw/refs/heads/PHP-${{ matrix.php-version }}/run-tests.php"
+        run: curl -sO 'https://raw.githubusercontent.com/php/php-src/PHP-${{ matrix.php-version }}/run-tests.php'
 
       - name: Run .phpt tests
         run: php run-tests.php
