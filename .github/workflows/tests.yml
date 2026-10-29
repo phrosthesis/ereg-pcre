@@ -33,11 +33,9 @@ jobs:
       - name: Download tests runner
         run: curl -sO 'https://raw.githubusercontent.com/php/php-src/PHP-${{ matrix.php-version }}/run-tests.php'
 
-      - run: which php
-
       - name: Run tests
         env:
           NO_INTERACTION: 1
-          TEST_PHP_EXECUTABLE: $(which php)
+          TEST_PHP_EXECUTABLE: /usr/bin/php
           TEST_PHP_JUNIT: junit.xml
         run: php run-tests.php -d auto_prepend_file=vendor/autoload.php
