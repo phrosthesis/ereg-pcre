@@ -33,5 +33,17 @@
         "branch-alias": {
             "main": "0.x-dev"
         }
+    },
+    "scripts": {
+        "run-tests": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php run-tests.php -d auto_prepend_file=vendor/autoload.php"
+        ]
+    },
+    "scripts-aliases": {
+        "run-tests": ["test"]
+    },
+    "scripts-descriptions": {
+        "run-tests": "Runs the tests"
     }
 }

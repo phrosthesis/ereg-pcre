@@ -5,3 +5,4 @@
 /tests/
 !/tests/*.phpt
 /run-tests.php
+/junit.xml

@@ -36,6 +36,5 @@ jobs:
       - name: Run tests
         env:
           TRAVIS: 1
-          NO_INTERACTION: 1
           TEST_PHP_JUNIT: junit.xml
-        run: php run-tests.php -d auto_prepend_file=vendor/autoload.php
+        run: composer test
