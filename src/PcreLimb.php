@@ -7,11 +7,14 @@ namespace Phrosthesis\Ereg;
 final class PcreLimb
 {
     /**
+     * @deprecated
      * @var bool
      */
-    private static $isScreaming = false;
+    private static $isScreaming = true;
 
     /**
+     * @deprecated
+     *
      * @return void
      */
     public static function setScreaming(bool $enable = true)
@@ -28,7 +31,7 @@ final class PcreLimb
     }
 
     /**
-     * @internal
+     * @deprecated
      *
      * @param non-empty-string $function
      * @return void
@@ -39,18 +42,7 @@ final class PcreLimb
             return;
         }
 
-        $message = 'Usage of deprecated function `' . $function . '`';
-
-        foreach (\debug_backtrace(\DEBUG_BACKTRACE_IGNORE_ARGS) as $trace) {
-            if ($trace['function'] === $function && !isset($trace['class'])) {
-                if (isset($trace['file'], $trace['line'])) {
-                    $message .= ' in ' . $trace['file'] . ':' . $trace['line'];
-                }
-                break;
-            }
-        }
-
-        \trigger_error($message, \E_USER_DEPRECATED);
+        \trigger_error("Function $function() is deprecated", \E_USER_DEPRECATED);
     }
 
     private function __construct() {}
