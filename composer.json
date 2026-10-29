@@ -35,6 +35,8 @@
         }
     },
     "scripts": {
+        "post-install-cmd": "@get-test-runner",
+        "post-update-cmd": "@get-test-runner",
         "get-test-runner": [
             "@php -r \"copy('https://raw.githubusercontent.com/php/php-src/PHP-'.PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION.'/run-tests.php', 'run-tests.php');\""
         ],

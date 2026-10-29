@@ -30,9 +30,6 @@ jobs:
       - name: Composer install
         uses: ramsey/composer-install@v4
 
-      - name: Download tests runner
-        run: curl -sO 'https://raw.githubusercontent.com/php/php-src/PHP-${{ matrix.php-version }}/run-tests.php'
-
       - name: Run tests
         env:
           NO_INTERACTION: 1
