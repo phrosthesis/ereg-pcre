@@ -36,12 +36,5 @@ jobs:
       - name: Run tests
         env:
           NO_INTERACTION: 1
-          TEST_PHP_JUNIT: junit-${{ matrix.php-version }}.xml
+          TEST_PHP_JUNIT: junit.xml
         run: php run-tests.php -P -d auto_prepend_file=vendor/autoload.php
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v7
-        with:
-          name: tests-${{ matrix.python-version }}
-          path: junit-${{ matrix.php-version }}.xml
-        if: ${{ always() }}
