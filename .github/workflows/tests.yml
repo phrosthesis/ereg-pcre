@@ -6,7 +6,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
         php-version: [
           '7.0', '7.1', '7.2', '7.3', '7.4',
@@ -37,5 +36,12 @@ jobs:
         env:
           NO_INTERACTION: 1
           TEST_PHP_EXECUTABLE: /usr/bin/php
-          TEST_PHP_JUNIT: junit.xml
+          TEST_PHP_JUNIT: junit-${{ matrix.php-version }}.xml
         run: php run-tests.php -d auto_prepend_file=vendor/autoload.php
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v7
+        with:
+          name: tests-${{ matrix.python-version }}
+          path: junit-${{ matrix.php-version }}.xml
+        if: ${{ always() }}
