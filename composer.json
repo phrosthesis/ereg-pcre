@@ -35,6 +35,9 @@
         }
     },
     "scripts": {
+        "get-test-runner": [
+            "@php -r \"copy('https://raw.githubusercontent.com/php/php-src/PHP-'.PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION.'/run-tests.php', 'run-tests.php');\""
+        ],
         "run-tests": [
             "Composer\\Config::disableProcessTimeout",
             "@php run-tests.php -P -d auto_prepend_file=vendor/autoload.php"
