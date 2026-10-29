@@ -33,5 +33,5 @@ jobs:
       - name: Download tests runner
         run: curl -sO 'https://raw.githubusercontent.com/php/php-src/PHP-${{ matrix.php-version }}/run-tests.php'
 
-      - name: Run .phpt tests
-        run: php run-tests.php
+      - name: Run tests
+        run: php run-tests.php -q --no-progress -d auto_prepend_file=vendor/autoload.php
