@@ -36,9 +36,9 @@ final class Regex
         $chars = \str_split($this->pattern);
         foreach ($chars as $i => $char) {
             if ('A' <= $char && $char <= 'Z') {
-                $chars[$i] = '['.$char.\strtolower($char).']';
+                $chars[$i] = '[' . $char . \strtolower($char) . ']';
             } elseif ('a' <= $char && $char <= 'z') {
-                $chars[$i] = '['.\strtoupper($char).$char.']';
+                $chars[$i] = '[' . \strtoupper($char) . $char . ']';
             }
         }
 
@@ -50,14 +50,13 @@ final class Regex
      */
     public function toPcre(): string
     {
-        $delim = \strpbrk(\count_chars($this->pattern, 4), '!"#$%&\'*+,-./:;=?@^_`|~');
+        $delim = \count_chars($this->pattern, 4); // get bytes not used in pattern
+        $delim = \strpbrk($delim, '!"#$%&\'*+,-./:;=?@^_`|~'); // find delimiter candidate
         if ($delim !== false) {
-            $delim = $delim[0];
-
-            return $delim.$this->pattern.$delim.$this->modifier;
+            return $delim[0] . $this->pattern . $delim[0] . $this->modifier;
         }
 
-        return '~'.\str_replace('~', '\\~', $this->pattern).'~'.$this->modifier;
+        return '~' . \addcslashes($this->pattern, '~') . '~' . $this->modifier;
     }
 
     /**

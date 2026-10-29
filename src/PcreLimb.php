@@ -39,12 +39,12 @@ final class PcreLimb
             return;
         }
 
-        $message = 'Usage of deprecated function `'.$function.'`';
+        $message = 'Usage of deprecated function `' . $function . '`';
 
         foreach (\debug_backtrace(\DEBUG_BACKTRACE_IGNORE_ARGS) as $trace) {
             if ($trace['function'] === $function && !isset($trace['class'])) {
                 if (isset($trace['file'], $trace['line'])) {
-                    $message .= ' in '.$trace['file'].':'.$trace['line'];
+                    $message .= ' in ' . $trace['file'] . ':' . $trace['line'];
                 }
                 break;
             }
