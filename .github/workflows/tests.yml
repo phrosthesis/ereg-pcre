@@ -1,0 +1,31 @@
+name: Compatibility Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+    fail-fast: false
+    matrix:
+      php-version: [
+        '7.0', '7.1', '7.2', '7.3', '7.4',
+        '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6',
+      ]
+
+      name: PHP ${{ matrix.php-version }}
+
+      steps:
+        - uses: actions/checkout@v7
+
+        - uses: shivammathur/setup-php@v2
+          with:
+            php-version: ${{ matrix.php-version }}
+            extensions: pcre
+            coverage: none
+            tools: composer
+
+        - uses: ramsey/composer-install@v4
+
+        - name: Run .phpt tests
+          run: which run-phpt
