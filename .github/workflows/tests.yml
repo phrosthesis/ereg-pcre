@@ -24,7 +24,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-version }}
           extensions: pcre
-          coverage: none
+          coverage: xdebug
           tools: composer
 
       - name: Composer install
