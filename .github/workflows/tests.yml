@@ -1,4 +1,4 @@
-name: Compatibility Tests
+name: Tests
 
 on: [push, pull_request]
 
@@ -16,16 +16,19 @@ jobs:
     name: PHP ${{ matrix.php-version }}
 
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout
+        uses: actions/checkout@v7
 
-      - uses: shivammathur/setup-php@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
           extensions: pcre
           coverage: none
           tools: composer
 
-      - uses: ramsey/composer-install@v4
+      - name: Composer install
+        uses: ramsey/composer-install@v4
 
       - name: Run .phpt tests
         run: which run-phpt
