@@ -7,7 +7,7 @@ namespace Phrosthesis\Ereg;
 /**
  * @internal
  */
-final class Regex
+final class PcreLimb
 {
     /**
      * @var string

@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @see https://php-legacy-docs.zend.com/manual/php5/en/book.regex
  */
 
-use Phrosthesis\Ereg\Regex;
+use Phrosthesis\Ereg\PcreLimb;
 
 if (!function_exists('ereg')) {
     /**
@@ -24,7 +24,7 @@ if (!function_exists('ereg')) {
     {
         \trigger_error('Function ereg() is deprecated', \E_USER_DEPRECATED);
 
-        $regex = new Regex($pattern);
+        $regex = new PcreLimb($pattern);
         if (\func_num_args() === 2) {
             return $regex->match($string);
         }
@@ -47,7 +47,7 @@ if (!function_exists('eregi')) {
     {
         \trigger_error('Function eregi() is deprecated', \E_USER_DEPRECATED);
 
-        $regex = new Regex($pattern, 'i');
+        $regex = new PcreLimb($pattern, 'i');
         if (\func_num_args() === 2) {
             return $regex->match($string);
         }
@@ -69,7 +69,7 @@ if (!function_exists('ereg_replace')) {
     {
         \trigger_error('Function ereg_replace() is deprecated', \E_USER_DEPRECATED);
 
-        $regex = new Regex($pattern);
+        $regex = new PcreLimb($pattern);
 
         return $regex->replace($replacement, $string);
     }
@@ -88,7 +88,7 @@ if (!function_exists('eregi_replace')) {
     {
         \trigger_error('Function eregi_replace() is deprecated', \E_USER_DEPRECATED);
 
-        $regex = new Regex($pattern, 'i');
+        $regex = new PcreLimb($pattern, 'i');
 
         return $regex->replace($replacement, $string);
     }
@@ -107,7 +107,7 @@ if (!function_exists('split')) {
     {
         \trigger_error('Function split() is deprecated', \E_USER_DEPRECATED);
 
-        $regex = new Regex($pattern);
+        $regex = new PcreLimb($pattern);
 
         return $regex->split($string, $limit);
     }
@@ -124,7 +124,7 @@ if (!function_exists('spliti')) {
     {
         \trigger_error('Function spliti() is deprecated', \E_USER_DEPRECATED);
 
-        $regex = new Regex($pattern, 'i');
+        $regex = new PcreLimb($pattern, 'i');
 
         return $regex->split($string, $limit);
     }
@@ -140,7 +140,7 @@ if (!function_exists('sql_regcase')) {
     {
         \trigger_error('Function sql_regcase() is deprecated', \E_USER_DEPRECATED);
 
-        $regex = new Regex($string);
+        $regex = new PcreLimb($string);
 
         return $regex->toCaseInsensitive();
     }
