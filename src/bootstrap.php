@@ -17,15 +17,28 @@ if (!function_exists('ereg')) {
      * @see https://php-legacy-docs.zend.com/manual/php5/en/function.ereg.html
      * @deprecated
      *
+     * @param string $pattern
+     * @param string $string
      * @param array|null $regs
-     * @return int|false
+     * @return int|false|null
      */
-    function ereg(string $pattern, string $string, &$regs = null)
+    function ereg($pattern = null, $string = null, &$regs = null)
     {
         \trigger_error('Function ereg() is deprecated', \E_USER_DEPRECATED);
 
+        $nargs = \func_num_args();
+        if ($nargs > 3) {
+            \trigger_error("ereg() expects at most 3 parameters, $nargs given", \E_USER_WARNING);
+
+            return null;
+        } elseif ($nargs < 2) {
+            \trigger_error("ereg() expects at least 2 parameters, $nargs given", \E_USER_WARNING);
+
+            return null;
+        }
+
         $regex = new PcreLimb($pattern);
-        if (\func_num_args() === 2) {
+        if ($nargs === 2) {
             return $regex->match($string);
         }
 
@@ -40,12 +53,25 @@ if (!function_exists('eregi')) {
      * @see https://php-legacy-docs.zend.com/manual/php5/en/function.eregi.html
      * @deprecated
      *
+     * @param string $pattern
+     * @param string $string
      * @param array|null $regs
-     * @return int|false
+     * @return int|false|null
      */
-    function eregi(string $pattern, string $string, &$regs = null)
+    function eregi($pattern = null, $string = null, &$regs = null)
     {
         \trigger_error('Function eregi() is deprecated', \E_USER_DEPRECATED);
+
+        $nargs = \func_num_args();
+        if ($nargs > 3) {
+            \trigger_error("eregi() expects at most 3 parameters, $nargs given", \E_USER_WARNING);
+
+            return null;
+        } elseif ($nargs < 2) {
+            \trigger_error("eregi() expects at least 2 parameters, $nargs given", \E_USER_WARNING);
+
+            return null;
+        }
 
         $regex = new PcreLimb($pattern, 'i');
         if (\func_num_args() === 2) {
