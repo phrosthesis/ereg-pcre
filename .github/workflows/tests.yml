@@ -34,4 +34,8 @@ jobs:
         run: curl -sO 'https://raw.githubusercontent.com/php/php-src/PHP-${{ matrix.php-version }}/run-tests.php'
 
       - name: Run tests
-        run: php run-tests.php -q --no-progress -d auto_prepend_file=vendor/autoload.php
+        env:
+          TRAVIS: 1
+          NO_INTERACTION: 1
+          TEST_PHP_JUNIT: junit.xml
+        run: php run-tests.php -d auto_prepend_file=vendor/autoload.php
