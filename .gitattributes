@@ -1,3 +1,6 @@
 * text=auto
 
 *.phpt text eol=lf
+
+/.* export-ignore
+/tests export-ignore

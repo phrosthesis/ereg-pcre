@@ -1,8 +1,8 @@
-/.idea/
-/.vscode/
-/vendor/
+/.idea
+/.vscode
+/vendor
 /composer.lock
-/tests/
-!/tests/*.phpt
+/tests
+!/tests/**.phpt
 /run-tests.php
 /junit.xml
