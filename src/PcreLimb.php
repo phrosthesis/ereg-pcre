@@ -95,10 +95,6 @@ final class PcreLimb
      */
     public function split(string $string, int $limit = -1)
     {
-        if ($limit === 0) {
-            $limit = -1;
-        }
-
         return \preg_split($this->toPcre(), $string, $limit);
     }
 }

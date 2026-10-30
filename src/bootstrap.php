@@ -133,6 +133,12 @@ if (!function_exists('split')) {
     {
         \trigger_error('Function split() is deprecated', \E_USER_DEPRECATED);
 
+        $nargs = \func_num_args();
+
+        if ($nargs === 3 && $limit < 1) {
+            $limit = 1;
+        }
+
         $regex = new PcreLimb($pattern);
 
         return $regex->split($string, $limit);
@@ -149,6 +155,12 @@ if (!function_exists('spliti')) {
     function spliti(string $pattern, string $string, int $limit = -1)
     {
         \trigger_error('Function spliti() is deprecated', \E_USER_DEPRECATED);
+
+        $nargs = \func_num_args();
+
+        if ($nargs === 3 && $limit < 1) {
+            $limit = 1;
+        }
 
         $regex = new PcreLimb($pattern, 'i');
 
