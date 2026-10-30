@@ -101,4 +101,4 @@ A prosthesis is temporary. Like any prosthesis.
 
 ## License
 
-MIT.
+BSD 3-Clause.
