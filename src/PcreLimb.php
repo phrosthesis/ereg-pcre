@@ -43,7 +43,12 @@ final class PcreLimb
 
         if ($min === $max) {
             if ($n !== $min) {
-                \trigger_error("$function() expects exactly $min parameters, $n given", \E_USER_WARNING);
+                if ($min === 1) {
+                    \trigger_error("$function() expects exactly 1 parameter, $n given", \E_USER_WARNING);
+                } else {
+                    \trigger_error("$function() expects exactly $min parameters, $n given", \E_USER_WARNING);
+                }
+
                 return false;
             }
 
@@ -51,12 +56,22 @@ final class PcreLimb
         }
 
         if ($n < $min) {
-            \trigger_error("$function() expects at least $min parameters, $n given", \E_USER_WARNING);
+            if ($min === 1) {
+                \trigger_error("$function() expects at least 1 parameter, $n given", \E_USER_WARNING);
+            } else {
+                \trigger_error("$function() expects at least $min parameters, $n given", \E_USER_WARNING);
+            }
+
             return false;
         }
 
         if ($max >= 0 && $n > $max) {
-            \trigger_error("$function() expects at most $max parameters, $n given", \E_USER_WARNING);
+            if ($max === 1) {
+                \trigger_error("$function() expects at most 1 parameter, $n given", \E_USER_WARNING);
+            } else {
+                \trigger_error("$function() expects at most $max parameters, $n given", \E_USER_WARNING);
+            }
+
             return false;
         }
 
