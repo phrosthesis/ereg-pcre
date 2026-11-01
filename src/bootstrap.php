@@ -22,18 +22,12 @@ if (!function_exists('ereg')) {
      * @param array|null $regs
      * @return int|false|null
      */
-    function ereg($pattern = null, $string = null, &$regs = null)
+    function ereg($pattern = '', $string = '', &$regs = null)
     {
         PcreLimb::deprecate(__FUNCTION__);
 
         $nargs = \func_num_args();
-        if ($nargs > 3) {
-            \trigger_error("ereg() expects at most 3 parameters, $nargs given", \E_USER_WARNING);
-
-            return null;
-        } elseif ($nargs < 2) {
-            \trigger_error("ereg() expects at least 2 parameters, $nargs given", \E_USER_WARNING);
-
+        if (!PcreLimb::checkArgsNumber(__FUNCTION__, $nargs, 2, 3)) {
             return null;
         }
 
@@ -58,18 +52,12 @@ if (!function_exists('eregi')) {
      * @param array|null $regs
      * @return int|false|null
      */
-    function eregi($pattern = null, $string = null, &$regs = null)
+    function eregi($pattern = '', $string = '', &$regs = null)
     {
         PcreLimb::deprecate(__FUNCTION__);
 
         $nargs = \func_num_args();
-        if ($nargs > 3) {
-            \trigger_error("eregi() expects at most 3 parameters, $nargs given", \E_USER_WARNING);
-
-            return null;
-        } elseif ($nargs < 2) {
-            \trigger_error("eregi() expects at least 2 parameters, $nargs given", \E_USER_WARNING);
-
+        if (!PcreLimb::checkArgsNumber(__FUNCTION__, $nargs, 2, 3)) {
             return null;
         }
 
@@ -89,11 +77,18 @@ if (!function_exists('ereg_replace')) {
      * @see https://php-legacy-docs.zend.com/manual/php5/en/function.ereg-replace.html
      * @deprecated
      *
-     * @return string|false
+     * @param string $pattern
+     * @param string $replacement
+     * @param string $string
+     * @return string|false|null
      */
-    function ereg_replace(string $pattern, string $replacement, string $string)
+    function ereg_replace($pattern = '', $replacement = '', string $string = '')
     {
         PcreLimb::deprecate(__FUNCTION__);
+
+        if (!PcreLimb::checkArgsNumber(__FUNCTION__, \func_num_args(), 3, 3)) {
+            return null;
+        }
 
         $regex = new PcreLimb($pattern);
 
@@ -108,11 +103,18 @@ if (!function_exists('eregi_replace')) {
      * @see https://php-legacy-docs.zend.com/manual/php5/en/function.eregi-replace.html
      * @deprecated
      *
-     * @return string|false
+     * @param string $pattern
+     * @param string $replacement
+     * @param string $string
+     * @return string|false|null
      */
-    function eregi_replace(string $pattern, string $replacement, string $string)
+    function eregi_replace($pattern = '', $replacement = '', string $string = '')
     {
         PcreLimb::deprecate(__FUNCTION__);
+
+        if (!PcreLimb::checkArgsNumber(__FUNCTION__, \func_num_args(), 3, 3)) {
+            return null;
+        }
 
         $regex = new PcreLimb($pattern, 'i');
 
@@ -127,13 +129,19 @@ if (!function_exists('split')) {
      * @see https://php-legacy-docs.zend.com/manual/php5/en/function.split.html
      * @deprecated
      *
-     * @return array|false
+     * @param string $pattern
+     * @param string $string
+     * @param int $limit
+     * @return array|false|null
      */
-    function split(string $pattern, string $string, int $limit = -1)
+    function split($pattern = '', $string = '', $limit = -1)
     {
         PcreLimb::deprecate(__FUNCTION__);
 
         $nargs = \func_num_args();
+        if (!PcreLimb::checkArgsNumber(__FUNCTION__, $nargs, 2, 3)) {
+            return null;
+        }
 
         if ($nargs === 3 && $limit < 1) {
             $limit = 1;
@@ -150,13 +158,21 @@ if (!function_exists('spliti')) {
      * Split string into array by regular expression case-insensitive
      *
      * @see https://php-legacy-docs.zend.com/manual/php5/en/function.spliti.html
-     * @return array|false
+     * @deprecated
+     *
+     * @param string $pattern
+     * @param string $string
+     * @param int $limit
+     * @return array|false|null
      */
-    function spliti(string $pattern, string $string, int $limit = -1)
+    function spliti($pattern = '', $string = '', $limit = -1)
     {
         PcreLimb::deprecate(__FUNCTION__);
 
         $nargs = \func_num_args();
+        if (!PcreLimb::checkArgsNumber(__FUNCTION__, $nargs, 2, 3)) {
+            return null;
+        }
 
         if ($nargs === 3 && $limit < 1) {
             $limit = 1;
@@ -173,10 +189,18 @@ if (!function_exists('sql_regcase')) {
      * Make regular expression for case-insensitive match
      *
      * @see https://php-legacy-docs.zend.com/manual/php5/en/function.sql-regcase.html
+     * @deprecated
+     *
+     * @param string $string
+     * @return string|null
      */
-    function sql_regcase(string $string): string
+    function sql_regcase($string = '')
     {
         PcreLimb::deprecate(__FUNCTION__);
+
+        if (!PcreLimb::checkArgsNumber(__FUNCTION__, \func_num_args(), 1, 1)) {
+            return null;
+        }
 
         $regex = new PcreLimb($string);
 
