@@ -24,7 +24,7 @@ if (!function_exists('ereg')) {
      */
     function ereg($pattern = null, $string = null, &$regs = null)
     {
-        \trigger_error('Function ereg() is deprecated', \E_USER_DEPRECATED);
+        PcreLimb::deprecate(__FUNCTION__);
 
         $nargs = \func_num_args();
         if ($nargs > 3) {
@@ -60,7 +60,7 @@ if (!function_exists('eregi')) {
      */
     function eregi($pattern = null, $string = null, &$regs = null)
     {
-        \trigger_error('Function eregi() is deprecated', \E_USER_DEPRECATED);
+        PcreLimb::deprecate(__FUNCTION__);
 
         $nargs = \func_num_args();
         if ($nargs > 3) {
@@ -93,7 +93,7 @@ if (!function_exists('ereg_replace')) {
      */
     function ereg_replace(string $pattern, string $replacement, string $string)
     {
-        \trigger_error('Function ereg_replace() is deprecated', \E_USER_DEPRECATED);
+        PcreLimb::deprecate(__FUNCTION__);
 
         $regex = new PcreLimb($pattern);
 
@@ -112,7 +112,7 @@ if (!function_exists('eregi_replace')) {
      */
     function eregi_replace(string $pattern, string $replacement, string $string)
     {
-        \trigger_error('Function eregi_replace() is deprecated', \E_USER_DEPRECATED);
+        PcreLimb::deprecate(__FUNCTION__);
 
         $regex = new PcreLimb($pattern, 'i');
 
@@ -131,7 +131,7 @@ if (!function_exists('split')) {
      */
     function split(string $pattern, string $string, int $limit = -1)
     {
-        \trigger_error('Function split() is deprecated', \E_USER_DEPRECATED);
+        PcreLimb::deprecate(__FUNCTION__);
 
         $nargs = \func_num_args();
 
@@ -154,7 +154,7 @@ if (!function_exists('spliti')) {
      */
     function spliti(string $pattern, string $string, int $limit = -1)
     {
-        \trigger_error('Function spliti() is deprecated', \E_USER_DEPRECATED);
+        PcreLimb::deprecate(__FUNCTION__);
 
         $nargs = \func_num_args();
 
@@ -176,7 +176,7 @@ if (!function_exists('sql_regcase')) {
      */
     function sql_regcase(string $string): string
     {
-        \trigger_error('Function sql_regcase() is deprecated', \E_USER_DEPRECATED);
+        PcreLimb::deprecate(__FUNCTION__);
 
         $regex = new PcreLimb($string);
 

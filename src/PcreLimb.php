@@ -22,6 +22,14 @@ final class PcreLimb
     private $modifier;
 
     /**
+     * @return void
+     */
+    public static function deprecate(string $function)
+    {
+        \trigger_error("Function $function() is deprecated", \E_USER_DEPRECATED);
+    }
+
+    /**
      * @param string $pattern
      * @param 'i'|'' $modifier
      */
