@@ -26,7 +26,41 @@ final class PcreLimb
      */
     public static function deprecate(string $function)
     {
+        \assert($function !== '');
+
         \trigger_error("Function $function() is deprecated", \E_USER_DEPRECATED);
+    }
+
+    /**
+     * @return bool
+     */
+    public static function checkArgsNumber(string $function, int $n, int $min, int $max = -1)
+    {
+        \assert($function !== '');
+        \assert($n >= 0);
+        \assert($min >= 0);
+        \assert($max < 0 || $min <= $max);
+
+        if ($min === $max) {
+            if ($n !== $min) {
+                \trigger_error("$function() expects exactly $min parameters, $n given", \E_USER_WARNING);
+                return false;
+            }
+
+            return true;
+        }
+
+        if ($n < $min) {
+            \trigger_error("$function() expects at least $min parameters, $n given", \E_USER_WARNING);
+            return false;
+        }
+
+        if ($max >= 0 && $n > $max) {
+            \trigger_error("$function() expects at most $max parameters, $n given", \E_USER_WARNING);
+            return false;
+        }
+
+        return true;
     }
 
     /**
