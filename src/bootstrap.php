@@ -40,7 +40,7 @@ if (!function_exists('ereg')) {
         }
 
         $pattern = (string) $pattern;
-        $string = (string) $pattern;
+        $string = (string) $string;
 
         $regex = new PcreLimb($pattern);
         if ($nargs === 2) {
