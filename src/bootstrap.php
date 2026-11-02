@@ -31,6 +31,9 @@ if (!function_exists('ereg')) {
             return null;
         }
 
+        $pattern = (string) $pattern;
+        $string = (string) $pattern;
+
         $regex = new PcreLimb($pattern);
         if ($nargs === 2) {
             return $regex->match($string);
@@ -61,6 +64,9 @@ if (!function_exists('eregi')) {
             return null;
         }
 
+        $pattern = (string) $pattern;
+        $string = (string) $string;
+
         $regex = new PcreLimb($pattern, 'i');
         if (\func_num_args() === 2) {
             return $regex->match($string);
@@ -90,6 +96,10 @@ if (!function_exists('ereg_replace')) {
             return null;
         }
 
+        $pattern = (string) $pattern;
+        $replacement = (string) $replacement;
+        $string = (string) $string;
+
         $regex = new PcreLimb($pattern);
 
         return $regex->replace($replacement, $string);
@@ -115,6 +125,10 @@ if (!function_exists('eregi_replace')) {
         if (!PcreLimb::checkArgsNumber(__FUNCTION__, \func_num_args(), 3, 3)) {
             return null;
         }
+
+        $pattern = (string) $pattern;
+        $replacement = (string) $replacement;
+        $string = (string) $string;
 
         $regex = new PcreLimb($pattern, 'i');
 
@@ -147,6 +161,10 @@ if (!function_exists('split')) {
             $limit = 1;
         }
 
+        $pattern = (string) $pattern;
+        $string = (string) $string;
+        $limit = (int) $limit;
+
         $regex = new PcreLimb($pattern);
 
         return $regex->split($string, $limit);
@@ -178,6 +196,10 @@ if (!function_exists('spliti')) {
             $limit = 1;
         }
 
+        $pattern = (string) $pattern;
+        $string = (string) $string;
+        $limit = (int) $limit;
+
         $regex = new PcreLimb($pattern, 'i');
 
         return $regex->split($string, $limit);
@@ -201,6 +223,8 @@ if (!function_exists('sql_regcase')) {
         if (!PcreLimb::checkArgsNumber(__FUNCTION__, \func_num_args(), 1, 1)) {
             return null;
         }
+
+        $string = (string) $string;
 
         $regex = new PcreLimb($string);
 
