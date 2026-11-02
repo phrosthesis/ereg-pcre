@@ -31,6 +31,10 @@ if (!function_exists('ereg')) {
             return null;
         }
 
+        if (!PcreLimb::checkRegex(__FUNCTION__, $pattern)) {
+            return false;
+        }
+
         $pattern = (string) $pattern;
         $string = (string) $pattern;
 
@@ -62,6 +66,10 @@ if (!function_exists('eregi')) {
         $nargs = \func_num_args();
         if (!PcreLimb::checkArgsNumber(__FUNCTION__, $nargs, 2, 3)) {
             return null;
+        }
+
+        if (!PcreLimb::checkRegex(__FUNCTION__, $pattern)) {
+            return false;
         }
 
         $pattern = (string) $pattern;
@@ -96,6 +104,10 @@ if (!function_exists('ereg_replace')) {
             return null;
         }
 
+        if (!PcreLimb::checkRegex(__FUNCTION__, $pattern)) {
+            return false;
+        }
+
         $pattern = (string) $pattern;
         $replacement = (string) $replacement;
         $string = (string) $string;
@@ -124,6 +136,10 @@ if (!function_exists('eregi_replace')) {
 
         if (!PcreLimb::checkArgsNumber(__FUNCTION__, \func_num_args(), 3, 3)) {
             return null;
+        }
+
+        if (!PcreLimb::checkRegex(__FUNCTION__, $pattern)) {
+            return false;
         }
 
         $pattern = (string) $pattern;
