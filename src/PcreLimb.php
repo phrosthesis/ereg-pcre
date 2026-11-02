@@ -78,6 +78,24 @@ final class PcreLimb
         return true;
     }
 
+    public static function checkArgIsString(string $function, int $n, $value): bool
+    {
+        \assert($function !== '');
+        \assert($n > 0);
+
+        if (\is_array($value)) {
+            \trigger_error("$function() expects parameter $n to be string, array given", \E_USER_WARNING);
+            return false;
+        }
+
+        if (\is_object($value) && !\method_exists($value, '__toString')) {
+            \trigger_error("$function() expects parameter $n to be string, object given", \E_USER_WARNING);
+            return false;
+        }
+
+        return true;
+    }
+
     /**
      * @param string $pattern
      * @param 'i'|'' $modifier
