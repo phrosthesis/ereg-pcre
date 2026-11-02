@@ -1,5 +1,5 @@
 --TEST--
-Test sql_regcase() function : usage variations  - unexpected arg type
+Test sql_regcase() function : usage variations - unexpected arg type
 --FILE--
 <?php
 

@@ -1,5 +1,5 @@
 --TEST--
-Test spliti() function : usage variations  - unexpected type for arg 3
+Test spliti() function : usage variations - unexpected type for arg 3
 --FILE--
 <?php
 

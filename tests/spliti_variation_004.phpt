@@ -1,5 +1,5 @@
 --TEST--
-Test spliti() function : usage variations  - out-of-range values for limit
+Test spliti() function : usage variations - out-of-range values for limit
 --FILE--
 <?php
 

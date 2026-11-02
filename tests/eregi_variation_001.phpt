@@ -1,5 +1,5 @@
 --TEST--
-Test eregi() function : usage variations  - unexpected type arg 1
+Test eregi() function : usage variations - unexpected type arg 1
 --FILE--
 <?php
 

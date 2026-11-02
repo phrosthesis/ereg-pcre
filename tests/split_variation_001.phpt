@@ -1,5 +1,5 @@
 --TEST--
-Test split() function : usage variations  - unexpected type for arg 1
+Test split() function : usage variations - unexpected type for arg 1
 --FILE--
 <?php
 

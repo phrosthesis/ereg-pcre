@@ -1,5 +1,5 @@
 --TEST--
-Test ereg() function : basic functionality  (without $regs)
+Test ereg() function : basic functionality (without $regs)
 --FILE--
 <?php
 

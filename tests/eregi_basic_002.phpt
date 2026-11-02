@@ -1,5 +1,5 @@
 --TEST--
-Test eregi() function : basic functionality  (without $regs)
+Test eregi() function : basic functionality (without $regs)
 --FILE--
 <?php
 

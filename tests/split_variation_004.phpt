@@ -1,5 +1,5 @@
 --TEST--
-Test split() function : usage variations  - out-of-range values for limit
+Test split() function : usage variations - out-of-range values for limit
 --FILE--
 <?php
 

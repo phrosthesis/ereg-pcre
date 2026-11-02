@@ -1,5 +1,5 @@
 --TEST--
-Test ereg() function : usage variations  - unexpected type for arg 3
+Test ereg() function : usage variations - unexpected type for arg 3
 --FILE--
 <?php
 
