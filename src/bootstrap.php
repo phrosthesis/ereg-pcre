@@ -224,6 +224,10 @@ if (!function_exists('sql_regcase')) {
             return null;
         }
 
+        if (!PcreLimb::checkArgIsString(__FUNCTION__, 1, $string)) {
+            return null;
+        }
+
         $string = (string) $string;
 
         $regex = new PcreLimb($string);
