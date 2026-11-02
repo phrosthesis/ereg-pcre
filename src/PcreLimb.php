@@ -96,6 +96,22 @@ final class PcreLimb
         return true;
     }
 
+    public static function checkRegex(string $function, $pattern): bool
+    {
+        \assert($function !== '');
+
+        if (\is_object($pattern)) {
+            $pattern = (int) $pattern;
+        }
+
+        if (!$pattern) {
+            \trigger_error("$function(): REG_EMPTY", \E_USER_WARNING);
+            return false;
+        }
+
+        return true;
+    }
+
     /**
      * @param string $pattern
      * @param 'i'|'' $modifier
