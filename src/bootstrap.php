@@ -35,6 +35,10 @@ if (!function_exists('ereg')) {
             return false;
         }
 
+        if (!PcreLimb::checkArgIsString(__FUNCTION__, 2, $string)) {
+            return null;
+        }
+
         $pattern = (string) $pattern;
         $string = (string) $pattern;
 
@@ -70,6 +74,10 @@ if (!function_exists('eregi')) {
 
         if (!PcreLimb::checkRegex(__FUNCTION__, $pattern)) {
             return false;
+        }
+
+        if (!PcreLimb::checkArgIsString(__FUNCTION__, 2, $string)) {
+            return null;
         }
 
         $pattern = (string) $pattern;
@@ -108,6 +116,14 @@ if (!function_exists('ereg_replace')) {
             return false;
         }
 
+        if (!PcreLimb::checkArgIsString(__FUNCTION__, 2, $replacement)) {
+            return null;
+        }
+
+        if (!PcreLimb::checkArgIsString(__FUNCTION__, 3, $string)) {
+            return null;
+        }
+
         $pattern = (string) $pattern;
         $replacement = (string) $replacement;
         $string = (string) $string;
@@ -142,6 +158,14 @@ if (!function_exists('eregi_replace')) {
             return false;
         }
 
+        if (!PcreLimb::checkArgIsString(__FUNCTION__, 2, $replacement)) {
+            return null;
+        }
+
+        if (!PcreLimb::checkArgIsString(__FUNCTION__, 3, $string)) {
+            return null;
+        }
+
         $pattern = (string) $pattern;
         $replacement = (string) $replacement;
         $string = (string) $string;
@@ -170,6 +194,14 @@ if (!function_exists('split')) {
 
         $nargs = \func_num_args();
         if (!PcreLimb::checkArgsNumber(__FUNCTION__, $nargs, 2, 3)) {
+            return null;
+        }
+
+        if (!PcreLimb::checkRegex(__FUNCTION__, $pattern)) {
+            return false;
+        }
+
+        if (!PcreLimb::checkArgIsString(__FUNCTION__, 2, $string)) {
             return null;
         }
 
@@ -205,6 +237,14 @@ if (!function_exists('spliti')) {
 
         $nargs = \func_num_args();
         if (!PcreLimb::checkArgsNumber(__FUNCTION__, $nargs, 2, 3)) {
+            return null;
+        }
+
+        if (!PcreLimb::checkRegex(__FUNCTION__, $pattern)) {
+            return false;
+        }
+
+        if (!PcreLimb::checkArgIsString(__FUNCTION__, 2, $string)) {
             return null;
         }
 
