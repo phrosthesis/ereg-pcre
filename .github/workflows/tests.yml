@@ -35,3 +35,9 @@ jobs:
           NO_INTERACTION: 1
           TEST_PHP_JUNIT: junit.xml
         run: php run-tests.php -P -d auto_prepend_file=vendor/autoload.php
+
+      - name: Publish report
+        uses: mikepenz/action-junit-report@v6
+        if: success() || failure()
+        with:
+          report_paths: junit.xml
