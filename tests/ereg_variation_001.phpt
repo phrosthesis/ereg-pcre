@@ -10,9 +10,9 @@ Test ereg() function : usage variations - unexpected type arg 1
  * Alias to functions:
  */
 
-function test_error_handler($err_no, $err_msg, $filename, $linenum, $vars = [])
+function test_error_handler(int $err_no, string $err_msg)
 {
-    echo "Error: $err_no - $err_msg, $filename($linenum)\n";
+    echo "Error: $err_no - $err_msg", PHP_EOL;
 }
 
 set_error_handler('test_error_handler');

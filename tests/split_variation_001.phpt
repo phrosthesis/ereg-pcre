@@ -10,14 +10,14 @@ Test split() function : usage variations - unexpected type for arg 1
  * Alias to functions:
  */
 
-function test_error_handler($err_no, $err_msg, $filename, $linenum, $vars = [])
+function test_error_handler(int $err_no, string $err_msg)
 {
-    echo "Error: $err_no - $err_msg, $filename($linenum)\n";
+    echo "Error: $err_no - $err_msg", PHP_EOL;
 }
 
 set_error_handler('test_error_handler');
 
-echo "*** Testing split() : usage variations ***\n";
+echo '*** Testing split() : usage variations ***', PHP_EOL;
 
 // Initialise function arguments not being substituted (if any)
 $string = '1 a 1 Array 1 c ';
