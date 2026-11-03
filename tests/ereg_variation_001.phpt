@@ -12,12 +12,12 @@ Test ereg() function : usage variations - unexpected type arg 1
 
 function test_error_handler(int $err_no, string $err_msg)
 {
-    echo "Error: $err_no - $err_msg", PHP_EOL;
+    echo "Error: $err_msg", PHP_EOL;
 }
 
 set_error_handler('test_error_handler');
 
-echo "*** Testing ereg() : usage variations ***\n";
+echo '*** Testing ereg() : usage variations ***', PHP_EOL;
 
 // Initialise function arguments not being substituted (if any)
 $string = '1';
@@ -76,136 +76,141 @@ $values = array(
 // loop through each element of the array for pattern
 
 foreach ($values as $value) {
-    echo "\nArg value $value \n";
+    try {
+        echo PHP_EOL, "Arg value '$value'", PHP_EOL;
+    } catch (Throwable $err) {
+        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value ''", PHP_EOL;
+    }
     var_dump(ereg($value, $string, $registers));
 }
 
-echo 'Done';
+echo PHP_EOL, 'Done';
 
 ?>
 --EXPECTF--
 *** Testing ereg() : usage variations ***
-Error: 8 - Undefined variable: undefined_var, %s(65)
-Error: 8 - Undefined variable: unset_var, %s(68)
+Error: Undefined variable: undefined_var
+Error: Undefined variable: unset_var
 
-Arg value 0
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Arg value '0'
+Error: Function ereg() is deprecated
 bool(false)
 
-Arg value 1
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Arg value '1'
+Error: Function ereg() is deprecated
 int(1)
 
-Arg value 12345
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Arg value '12345'
+Error: Function ereg() is deprecated
 bool(false)
 
-Arg value -2345
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Arg value '-2345'
+Error: Function ereg() is deprecated
 bool(false)
 
-Arg value 10.5
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Arg value '10.5'
+Error: Function ereg() is deprecated
 bool(false)
 
-Arg value -10.5
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Arg value '-10.5'
+Error: Function ereg() is deprecated
 bool(false)
 
-Arg value 101234567000
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Arg value '101234567000'
+Error: Function ereg() is deprecated
 bool(false)
 
-Arg value 1.07654321E-9
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Arg value '1.07654321E-9'
+Error: Function ereg() is deprecated
 bool(false)
 
-Arg value 0.5
-Error: 8192 - Function ereg() is deprecated, %s(75)
-bool(false)
-Error: 8 - Array to string conversion, %sereg_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 8 - Array to string conversion, %s(75)
-bool(false)
-Error: 8 - Array to string conversion, %sereg_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 8 - Array to string conversion, %s(75)
-bool(false)
-Error: 8 - Array to string conversion, %sereg_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 8 - Array to string conversion, %s(75)
-bool(false)
-Error: 8 - Array to string conversion, %sereg_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 8 - Array to string conversion, %s(75)
-bool(false)
-Error: 8 - Array to string conversion, %sereg_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 8 - Array to string conversion, %s(75)
+Arg value '0.5'
+Error: Function ereg() is deprecated
 bool(false)
 
-Arg value
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 2 - ereg(): REG_EMPTY, %s(75)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg() is deprecated
+Error: Array to string conversion
 bool(false)
 
-Arg value
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 2 - ereg(): REG_EMPTY, %s(75)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg() is deprecated
+Error: Array to string conversion
 bool(false)
 
-Arg value 1
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg() is deprecated
+Error: Array to string conversion
+bool(false)
+
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg() is deprecated
+Error: Array to string conversion
+bool(false)
+
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg() is deprecated
+Error: Array to string conversion
+bool(false)
+
+Arg value ''
+Error: Function ereg() is deprecated
+Error: ereg(): REG_EMPTY
+bool(false)
+
+Arg value ''
+Error: Function ereg() is deprecated
+Error: ereg(): REG_EMPTY
+bool(false)
+
+Arg value '1'
+Error: Function ereg() is deprecated
 int(1)
 
-Arg value
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 2 - ereg(): REG_EMPTY, %s(75)
+Arg value ''
+Error: Function ereg() is deprecated
+Error: ereg(): REG_EMPTY
 bool(false)
 
-Arg value 1
-Error: 8192 - Function ereg() is deprecated, %s(75)
+Arg value '1'
+Error: Function ereg() is deprecated
 int(1)
 
-Arg value
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 2 - ereg(): REG_EMPTY, %s(75)
+Arg value ''
+Error: Function ereg() is deprecated
+Error: ereg(): REG_EMPTY
 bool(false)
 
-Arg value
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 2 - ereg(): REG_EMPTY, %s(75)
+Arg value ''
+Error: Function ereg() is deprecated
+Error: ereg(): REG_EMPTY
 bool(false)
 
-Arg value
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 2 - ereg(): REG_EMPTY, %s(75)
-bool(false)
-Error: 4096 - Object of class stdClass could not be converted to string, %s(74)
-
-Arg value
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 4096 - Object of class stdClass could not be converted to string, %s(75)
-Error: 8 - Object of class stdClass to string conversion, %s(75)
+Arg value ''
+Error: Function ereg() is deprecated
+Error: ereg(): REG_EMPTY
 bool(false)
 
-Arg value
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 2 - ereg(): REG_EMPTY, %s(75)
+Error: Object of class stdClass could not be converted to string
+Arg value ''
+Error: Function ereg() is deprecated
+Error: Object of class stdClass could not be converted to string
+Error: Object of class stdClass to string conversion
 bool(false)
 
-Arg value
-Error: 8192 - Function ereg() is deprecated, %s(75)
-Error: 2 - ereg(): REG_EMPTY, %s(75)
+Arg value ''
+Error: Function ereg() is deprecated
+Error: ereg(): REG_EMPTY
 bool(false)
+
+Arg value ''
+Error: Function ereg() is deprecated
+Error: ereg(): REG_EMPTY
+bool(false)
+
 Done

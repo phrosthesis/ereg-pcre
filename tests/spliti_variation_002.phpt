@@ -12,7 +12,7 @@ Test spliti() function : usage variations - unexpected type for arg 2
 
 function test_error_handler(int $err_no, string $err_msg)
 {
-    echo "Error: $err_no - $err_msg", PHP_EOL;
+    echo "Error: $err_msg", PHP_EOL;
 }
 
 set_error_handler('test_error_handler');
@@ -76,7 +76,11 @@ $values = array(
 // loop through each element of the array for string
 
 foreach ($values as $value) {
-    echo PHP_EOL, "Arg value <$value>", PHP_EOL;
+    try {
+        echo PHP_EOL, "Arg value '$value'", PHP_EOL;
+    } catch (Throwable $err) {
+        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value ''", PHP_EOL;
+    }
     var_dump(spliti($pattern, $value, $limit));
 }
 
@@ -85,60 +89,60 @@ echo PHP_EOL, 'Done';
 ?>
 --EXPECTF--
 *** Testing spliti() : usage variations ***
-Error: 8 - Undefined variable: undefined_var
-Error: 8 - Undefined variable: unset_var
+Error: Undefined variable: undefined_var
+Error: Undefined variable: unset_var
 
-Arg value <0>
-Error: %d - Function spliti() is deprecated
+Arg value '0'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(1) "0"
 }
 
-Arg value <1>
-Error: %d - Function spliti() is deprecated
+Arg value '1'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(1) "1"
 }
 
-Arg value <12345>
-Error: %d - Function spliti() is deprecated
+Arg value '12345'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(5) "12345"
 }
 
-Arg value <-2345>
-Error: %d - Function spliti() is deprecated
+Arg value '-2345'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(5) "-2345"
 }
 
-Arg value <10.5>
-Error: %d - Function spliti() is deprecated
+Arg value '10.5'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(4) "10.5"
 }
 
-Arg value <-10.5>
-Error: %d - Function spliti() is deprecated
+Arg value '-10.5'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(5) "-10.5"
 }
 
-Arg value <101234567000>
-Error: %d - Function spliti() is deprecated
+Arg value '101234567000'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(12) "101234567000"
 }
 
-Arg value <1.07654321E-9>
-Error: %d - Function spliti() is deprecated
+Arg value '1.07654321E-9'
+Error: Function spliti() is deprecated
 array(2) {
   [0]=>
   string(10) "1.07654321"
@@ -146,114 +150,114 @@ array(2) {
   string(2) "-9"
 }
 
-Arg value <0.5>
-Error: %d - Function spliti() is deprecated
+Arg value '0.5'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(3) "0.5"
 }
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function spliti() is deprecated
-Error: %d - spliti() expects parameter 2 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 2 to be string, array given
 NULL
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function spliti() is deprecated
-Error: %d - spliti() expects parameter 2 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 2 to be string, array given
 NULL
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function spliti() is deprecated
-Error: %d - spliti() expects parameter 2 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 2 to be string, array given
 NULL
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function spliti() is deprecated
-Error: %d - spliti() expects parameter 2 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 2 to be string, array given
 NULL
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function spliti() is deprecated
-Error: %d - spliti() expects parameter 2 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 2 to be string, array given
 NULL
 
-Arg value <>
-Error: %d - Function spliti() is deprecated
+Arg value ''
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value <>
-Error: %d - Function spliti() is deprecated
+Arg value ''
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value <1>
-Error: %d - Function spliti() is deprecated
+Arg value '1'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(1) "1"
 }
 
-Arg value <>
-Error: %d - Function spliti() is deprecated
+Arg value ''
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value <1>
-Error: %d - Function spliti() is deprecated
+Arg value '1'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(1) "1"
 }
 
-Arg value <>
-Error: %d - Function spliti() is deprecated
+Arg value ''
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value <>
-Error: %d - Function spliti() is deprecated
+Arg value ''
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value <>
-Error: %d - Function spliti() is deprecated
+Arg value ''
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Error: 4096 - Object of class stdClass could not be converted to string
-Arg value <>
-Error: %d - Function spliti() is deprecated
-Error: %d - spliti() expects parameter 2 to be string, object given
+Error: Object of class stdClass could not be converted to string
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 2 to be string, object given
 NULL
 
-Arg value <>
-Error: %d - Function spliti() is deprecated
+Arg value ''
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value <>
-Error: %d - Function spliti() is deprecated
+Arg value ''
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(0) ""

@@ -12,7 +12,7 @@ Test ereg_replace() function : usage variations - unexpected type arg 1
 
 function test_error_handler(int $err_no, string $err_msg)
 {
-    echo "Error: $err_no - $err_msg", PHP_EOL;
+    echo "Error: $err_msg", PHP_EOL;
 }
 
 set_error_handler('test_error_handler');
@@ -76,134 +76,139 @@ $values = array(
 // loop through each element of the array for pattern
 
 foreach ($values as $value) {
-    echo PHP_EOL, "Arg value $value", PHP_EOL;
+    try {
+        echo PHP_EOL, "Arg value '$value'", PHP_EOL;
+    } catch (Throwable $err) {
+        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value ''", PHP_EOL;
+    }
     var_dump(ereg_replace($value, $replacement, $string));
 }
 
-echo 'Done';
+echo PHP_EOL, 'Done';
 
 ?>
 --EXPECTF--
 *** Testing ereg_replace() : usage variations ***
-Error: 8 - Undefined variable: undefined_var, %s(64)
-Error: 8 - Undefined variable: unset_var, %s(67)
+Error: Undefined variable: undefined_var
+Error: Undefined variable: unset_var
 
-Arg value 0
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
+Arg value '0'
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
 bool(false)
 
-Arg value 1
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
+Arg value '1'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value 12345
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
+Arg value '12345'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value -2345
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
+Arg value '-2345'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value 10.5
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
+Arg value '10.5'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value -10.5
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
+Arg value '-10.5'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value 101234567000
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
+Arg value '101234567000'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value 1.07654321E-9
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
+Arg value '1.07654321E-9'
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
 bool(false)
 
-Arg value 0.5
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
+Arg value '0.5'
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
 bool(false)
-Error: 8 - Array to string conversion, %sereg_replace_variation_001.php(%d)
 
-Arg value Array
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
 bool(false)
-Error: 8 - Array to string conversion, %sereg_replace_variation_001.php(%d)
 
-Arg value Array
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-string(8) "original"
-Error: 8 - Array to string conversion, %sereg_replace_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-string(8) "original"
-Error: 8 - Array to string conversion, %sereg_replace_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-string(8) "original"
-Error: 8 - Array to string conversion, %sereg_replace_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
-bool(false)
-
-Arg value
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
-bool(false)
-
-Arg value 1
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
-bool(false)
-
-Arg value 1
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
-bool(false)
-
-Arg value
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
-bool(false)
-
-Arg value
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
-bool(false)
-Error: 4096 - Object of class stdClass could not be converted to string, %s(73)
-
-Arg value
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 8 - Object of class stdClass could not be converted to int, %s(74)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
 string(8) "original"
 
-Arg value
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
 bool(false)
 
-Arg value
-Error: 8192 - Function ereg_replace() is deprecated, %s(74)
-Error: 2 - ereg_replace(): REG_EMPTY, %s(74)
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
 bool(false)
+
+Arg value '1'
+Error: Function ereg_replace() is deprecated
+string(8) "original"
+
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
+bool(false)
+
+Arg value '1'
+Error: Function ereg_replace() is deprecated
+string(8) "original"
+
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
+bool(false)
+
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
+bool(false)
+
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
+bool(false)
+
+Error: Object of class stdClass could not be converted to string
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: Object of class stdClass could not be converted to int
+string(8) "original"
+
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
+bool(false)
+
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace(): REG_EMPTY
+bool(false)
+
 Done

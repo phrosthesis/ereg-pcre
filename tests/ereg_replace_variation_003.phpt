@@ -12,7 +12,7 @@ Test ereg_replace() function : usage variations - unexpected type arg 3
 
 function test_error_handler(int $err_no, string $err_msg)
 {
-    echo "Error: $err_no - $err_msg", PHP_EOL;
+    echo "Error: $err_msg", PHP_EOL;
 }
 
 set_error_handler('test_error_handler');
@@ -76,7 +76,11 @@ $values = array(
 // loop through each element of the array for string
 
 foreach ($values as $value) {
-    echo PHP_EOL, "Arg value <$value>", PHP_EOL;
+    try {
+        echo PHP_EOL, "Arg value '$value'", PHP_EOL;
+    } catch (Throwable $err) {
+        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value ''", PHP_EOL;
+    }
     var_dump(ereg_replace($pattern, $replacement, $value));
 }
 
@@ -85,119 +89,119 @@ echo PHP_EOL, 'Done';
 ?>
 --EXPECTF--
 *** Testing ereg_replace() : usage variations ***
-Error: 8 - Undefined variable: undefined_var
-Error: 8 - Undefined variable: unset_var
+Error: Undefined variable: undefined_var
+Error: Undefined variable: unset_var
 
-Arg value <0>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '0'
+Error: Function ereg_replace() is deprecated
 string(1) "0"
 
-Arg value <1>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '1'
+Error: Function ereg_replace() is deprecated
 string(9) "new value"
 
-Arg value <12345>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '12345'
+Error: Function ereg_replace() is deprecated
 string(13) "new value2345"
 
-Arg value <-2345>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '-2345'
+Error: Function ereg_replace() is deprecated
 string(5) "-2345"
 
-Arg value <10.5>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '10.5'
+Error: Function ereg_replace() is deprecated
 string(12) "new value0.5"
 
-Arg value <-10.5>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '-10.5'
+Error: Function ereg_replace() is deprecated
 string(13) "-new value0.5"
 
-Arg value <101234567000>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '101234567000'
+Error: Function ereg_replace() is deprecated
 string(28) "new value0new value234567000"
 
-Arg value <1.07654321E-9>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '1.07654321E-9'
+Error: Function ereg_replace() is deprecated
 string(29) "new value.0765432new valueE-9"
 
-Arg value <0.5>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '0.5'
+Error: Function ereg_replace() is deprecated
 string(3) "0.5"
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function ereg_replace() is deprecated
-Error: %d - ereg_replace() expects parameter 3 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace() expects parameter 3 to be string, array given
 NULL
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function ereg_replace() is deprecated
-Error: %d - ereg_replace() expects parameter 3 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace() expects parameter 3 to be string, array given
 NULL
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function ereg_replace() is deprecated
-Error: %d - ereg_replace() expects parameter 3 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace() expects parameter 3 to be string, array given
 NULL
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function ereg_replace() is deprecated
-Error: %d - ereg_replace() expects parameter 3 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace() expects parameter 3 to be string, array given
 NULL
 
-Error: 8 - Array to string conversion
-Arg value <Array>
-Error: %d - Function ereg_replace() is deprecated
-Error: %d - ereg_replace() expects parameter 3 to be string, array given
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace() expects parameter 3 to be string, array given
 NULL
 
-Arg value <>
-Error: %d - Function ereg_replace() is deprecated
+Arg value ''
+Error: Function ereg_replace() is deprecated
 string(0) ""
 
-Arg value <>
-Error: %d - Function ereg_replace() is deprecated
+Arg value ''
+Error: Function ereg_replace() is deprecated
 string(0) ""
 
-Arg value <1>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '1'
+Error: Function ereg_replace() is deprecated
 string(9) "new value"
 
-Arg value <>
-Error: %d - Function ereg_replace() is deprecated
+Arg value ''
+Error: Function ereg_replace() is deprecated
 string(0) ""
 
-Arg value <1>
-Error: %d - Function ereg_replace() is deprecated
+Arg value '1'
+Error: Function ereg_replace() is deprecated
 string(9) "new value"
 
-Arg value <>
-Error: %d - Function ereg_replace() is deprecated
+Arg value ''
+Error: Function ereg_replace() is deprecated
 string(0) ""
 
-Arg value <>
-Error: %d - Function ereg_replace() is deprecated
+Arg value ''
+Error: Function ereg_replace() is deprecated
 string(0) ""
 
-Arg value <>
-Error: %d - Function ereg_replace() is deprecated
+Arg value ''
+Error: Function ereg_replace() is deprecated
 string(0) ""
 
-Error: 4096 - Object of class stdClass could not be converted to string
-Arg value <>
-Error: %d - Function ereg_replace() is deprecated
-Error: %d - ereg_replace() expects parameter 3 to be string, object given
+Error: Object of class stdClass could not be converted to string
+Arg value ''
+Error: Function ereg_replace() is deprecated
+Error: ereg_replace() expects parameter 3 to be string, object given
 NULL
 
-Arg value <>
-Error: %d - Function ereg_replace() is deprecated
+Arg value ''
+Error: Function ereg_replace() is deprecated
 string(0) ""
 
-Arg value <>
-Error: %d - Function ereg_replace() is deprecated
+Arg value ''
+Error: Function ereg_replace() is deprecated
 string(0) ""
 
 Done

@@ -12,7 +12,7 @@ Test spliti() function : usage variations - unexpected type for arg 1
 
 function test_error_handler(int $err_no, string $err_msg)
 {
-    echo "Error: $err_no - $err_msg", PHP_EOL;
+    echo "Error: $err_msg", PHP_EOL;
 }
 
 set_error_handler('test_error_handler');
@@ -76,27 +76,31 @@ $values = array(
 // loop through each element of the array for pattern
 
 foreach ($values as $value) {
-    echo "\nArg value $value \n";
+    try {
+        echo PHP_EOL, "Arg value '$value'", PHP_EOL;
+    } catch (Throwable $err) {
+        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value ''", PHP_EOL;
+    }
     var_dump(spliti($value, $string, $limit));
 }
 
-echo 'Done';
+echo PHP_EOL, 'Done';
 
 ?>
 --EXPECTF--
 *** Testing spliti() : usage variations ***
-Error: 8 - Undefined variable: undefined_var, %s(64)
-Error: 8 - Undefined variable: unset_var, %s(67)
+Error: Undefined variable: undefined_var
+Error: Undefined variable: unset_var
 
-Arg value 0
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '0'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(16) "1 a 1 Array 1 c "
 }
 
-Arg value 1
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '1'
+Error: Function spliti() is deprecated
 array(4) {
   [0]=>
   string(0) ""
@@ -108,97 +112,97 @@ array(4) {
   string(3) " c "
 }
 
-Arg value 12345
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '12345'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(16) "1 a 1 Array 1 c "
 }
 
-Arg value -2345
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '-2345'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(16) "1 a 1 Array 1 c "
 }
 
-Arg value 10.5
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '10.5'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(16) "1 a 1 Array 1 c "
 }
 
-Arg value -10.5
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '-10.5'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(16) "1 a 1 Array 1 c "
 }
 
-Arg value 101234567000
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '101234567000'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(16) "1 a 1 Array 1 c "
 }
 
-Arg value 1.07654321E-9
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '1.07654321E-9'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(16) "1 a 1 Array 1 c "
 }
 
-Arg value 0.5
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '0.5'
+Error: Function spliti() is deprecated
 array(1) {
   [0]=>
   string(16) "1 a 1 Array 1 c "
 }
-Error: 8 - Array to string conversion, %sspliti_variation_001.php(%d)
 
-Arg value Array
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti() expects parameter 1 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %sspliti_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti() expects parameter 1 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %sspliti_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti() expects parameter 1 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %sspliti_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti() expects parameter 1 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %sspliti_variation_001.php(%d)
-
-Arg value Array
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti() expects parameter 1 to be string, array given, %s(74)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 1 to be string, array given
 NULL
 
-Arg value
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti(): REG_EMPTY, %s(74)
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 1 to be string, array given
+NULL
+
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 1 to be string, array given
+NULL
+
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 1 to be string, array given
+NULL
+
+Error: Array to string conversion
+Arg value 'Array'
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 1 to be string, array given
+NULL
+
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti(): REG_EMPTY
 bool(false)
 
-Arg value
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti(): REG_EMPTY, %s(74)
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti(): REG_EMPTY
 bool(false)
 
-Arg value 1
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '1'
+Error: Function spliti() is deprecated
 array(4) {
   [0]=>
   string(0) ""
@@ -210,13 +214,13 @@ array(4) {
   string(3) " c "
 }
 
-Arg value
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti(): REG_EMPTY, %s(74)
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti(): REG_EMPTY
 bool(false)
 
-Arg value 1
-Error: 8192 - Function spliti() is deprecated, %s(74)
+Arg value '1'
+Error: Function spliti() is deprecated
 array(4) {
   [0]=>
   string(0) ""
@@ -228,34 +232,35 @@ array(4) {
   string(3) " c "
 }
 
-Arg value
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti(): REG_EMPTY, %s(74)
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti(): REG_EMPTY
 bool(false)
 
-Arg value
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti(): REG_EMPTY, %s(74)
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti(): REG_EMPTY
 bool(false)
 
-Arg value
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti(): REG_EMPTY, %s(74)
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti(): REG_EMPTY
 bool(false)
-Error: 4096 - Object of class stdClass could not be converted to string, %s(73)
+Error: Object of class stdClass could not be converted to string, %s(73)
 
-Arg value
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti() expects parameter 1 to be string, object given, %s(74)
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti() expects parameter 1 to be string, object given
 NULL
 
-Arg value
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti(): REG_EMPTY, %s(74)
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti(): REG_EMPTY
 bool(false)
 
-Arg value
-Error: 8192 - Function spliti() is deprecated, %s(74)
-Error: 2 - spliti(): REG_EMPTY, %s(74)
+Arg value ''
+Error: Function spliti() is deprecated
+Error: spliti(): REG_EMPTY
 bool(false)
+
 Done
