@@ -96,6 +96,29 @@ final class PcreLimb
         return true;
     }
 
+    public static function checkArgIsInt(string $function, int $n, $value): bool
+    {
+        \assert($function !== '');
+        \assert($n > 0);
+
+        if (\is_array($value)) {
+            \trigger_error("$function() expects parameter $n to be long, array given", \E_USER_WARNING);
+            return false;
+        }
+
+        if (\is_object($value)) {
+            \trigger_error("$function() expects parameter $n to be long, object given", \E_USER_WARNING);
+            return false;
+        }
+
+        if (\is_string($value) && !\is_numeric($value)) {
+            \trigger_error("$function() expects parameter $n to be long, string given", \E_USER_WARNING);
+            return false;
+        }
+
+        return true;
+    }
+
     public static function checkRegex(string $function, $pattern): bool
     {
         \assert($function !== '');

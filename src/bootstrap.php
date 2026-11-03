@@ -205,6 +205,10 @@ if (!function_exists('split')) {
             return null;
         }
 
+        if (!PcreLimb::checkArgIsInt(__FUNCTION__, 3, $limit)) {
+            return null;
+        }
+
         if ($nargs === 3 && $limit < 1) {
             $limit = 1;
         }
@@ -245,6 +249,10 @@ if (!function_exists('spliti')) {
         }
 
         if (!PcreLimb::checkArgIsString(__FUNCTION__, 2, $string)) {
+            return null;
+        }
+
+        if (!PcreLimb::checkArgIsInt(__FUNCTION__, 3, $limit)) {
             return null;
         }
 
