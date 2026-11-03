@@ -76,69 +76,69 @@ $values = array(
 // loop through each element of the array for string
 
 foreach ($values as $value) {
-    echo "\nArg value $value \n";
+    echo PHP_EOL, "Arg value <$value>", PHP_EOL;
     var_dump(split($pattern, $value, $limit));
 }
 
-echo 'Done';
+echo PHP_EOL, 'Done';
 
 ?>
 --EXPECTF--
 *** Testing split() : usage variations ***
-Error: 8 - Undefined variable: undefined_var, %s(64)
-Error: 8 - Undefined variable: unset_var, %s(67)
+Error: 8 - Undefined variable: undefined_var
+Error: 8 - Undefined variable: unset_var
 
-Arg value 0
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <0>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(1) "0"
 }
 
-Arg value 1
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <1>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(1) "1"
 }
 
-Arg value 12345
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <12345>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(5) "12345"
 }
 
-Arg value -2345
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <-2345>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(5) "-2345"
 }
 
-Arg value 10.5
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <10.5>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(4) "10.5"
 }
 
-Arg value -10.5
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <-10.5>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(5) "-10.5"
 }
 
-Arg value 101234567000
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <101234567000>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(12) "101234567000"
 }
 
-Arg value 1.07654321E-9
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <1.07654321E-9>
+Error: %d - Function split() is deprecated
 array(2) {
   [0]=>
   string(10) "1.07654321"
@@ -146,116 +146,117 @@ array(2) {
   string(2) "-9"
 }
 
-Arg value 0.5
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <0.5>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(3) "0.5"
 }
-Error: 8 - Array to string conversion, %ssplit_variation_002.php(%d)
 
-Arg value Array
-Error: 8192 - Function split() is deprecated, %s(74)
-Error: 2 - split() expects parameter 2 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %ssplit_variation_002.php(%d)
-
-Arg value Array
-Error: 8192 - Function split() is deprecated, %s(74)
-Error: 2 - split() expects parameter 2 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %ssplit_variation_002.php(%d)
-
-Arg value Array
-Error: 8192 - Function split() is deprecated, %s(74)
-Error: 2 - split() expects parameter 2 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %ssplit_variation_002.php(%d)
-
-Arg value Array
-Error: 8192 - Function split() is deprecated, %s(74)
-Error: 2 - split() expects parameter 2 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %ssplit_variation_002.php(%d)
-
-Arg value Array
-Error: 8192 - Function split() is deprecated, %s(74)
-Error: 2 - split() expects parameter 2 to be string, array given, %s(74)
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function split() is deprecated
+Error: %d - split() expects parameter 2 to be string, array given
 NULL
 
-Arg value
-Error: 8192 - Function split() is deprecated, %s(74)
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function split() is deprecated
+Error: %d - split() expects parameter 2 to be string, array given
+NULL
+
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function split() is deprecated
+Error: %d - split() expects parameter 2 to be string, array given
+NULL
+
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function split() is deprecated
+Error: %d - split() expects parameter 2 to be string, array given
+NULL
+
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function split() is deprecated
+Error: %d - split() expects parameter 2 to be string, array given
+NULL
+
+Arg value <>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value 1
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <1>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(1) "1"
 }
 
-Arg value
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value 1
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <1>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(1) "1"
 }
 
-Arg value
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
-Error: 4096 - Object of class stdClass could not be converted to string, %s(73)
 
-Arg value
-Error: 8192 - Function split() is deprecated, %s(74)
-Error: 2 - split() expects parameter 2 to be string, object given, %s(74)
+Error: 4096 - Object of class stdClass could not be converted to string
+Arg value <>
+Error: %d - Function split() is deprecated
+Error: %d - split() expects parameter 2 to be string, object given
 NULL
 
-Arg value
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
 
-Arg value
-Error: 8192 - Function split() is deprecated, %s(74)
+Arg value <>
+Error: %d - Function split() is deprecated
 array(1) {
   [0]=>
   string(0) ""
 }
+
 Done
