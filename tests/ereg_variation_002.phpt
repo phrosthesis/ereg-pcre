@@ -80,7 +80,7 @@ foreach ($values as $value) {
     var_dump(ereg($pattern, $value, $registers));
 }
 
-echo 'Done';
+echo PHP_EOL, 'Done';
 
 ?>
 --EXPECTF--
@@ -151,7 +151,7 @@ NULL
 Error: 8 - Array to string conversion
 Arg value <Array>
 Error: %d - Function ereg() is deprecated
-Error: 2 - ereg() expects parameter 2 to be string, array given
+Error: %d - ereg() expects parameter 2 to be string, array given
 NULL
 
 Arg value <>
@@ -185,11 +185,11 @@ bool(false)
 Arg value <>
 Error: %d - Function ereg() is deprecated
 bool(false)
-Error: 4096 - Object of class stdClass could not be converted to string, %s(73)
 
+Error: 4096 - Object of class stdClass could not be converted to string
 Arg value <>
 Error: %d - Function ereg() is deprecated
-Error: 2 - ereg() expects parameter 2 to be string, object given
+Error: %d - ereg() expects parameter 2 to be string, object given
 NULL
 
 Arg value <>
@@ -199,4 +199,5 @@ bool(false)
 Arg value <>
 Error: %d - Function ereg() is deprecated
 bool(false)
+
 Done

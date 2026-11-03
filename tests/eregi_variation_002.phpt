@@ -78,127 +78,128 @@ $values = array(
 // loop through each element of the array for string
 
 foreach ($values as $value) {
-    echo "\nArg value $value \n";
+    echo PHP_EOL, "Arg value <$value>", PHP_EOL;
     var_dump(eregi($pattern, $value, $registers));
 }
 
-echo 'Done';
+echo PHP_EOL, 'Done';
 
 ?>
 --EXPECTF--
 *** Testing eregi() : usage variations ***
-Error: 8 - Undefined variable: undefined_var, %s(64)
-Error: 8 - Undefined variable: unset_var, %s(67)
+Error: 8 - Undefined variable: undefined_var
+Error: 8 - Undefined variable: unset_var
 
-Arg value 0
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <0>
+Error: %d - Function eregi() is deprecated
 bool(false)
 
-Arg value 1
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <1>
+Error: %d - Function eregi() is deprecated
 int(1)
 
-Arg value 12345
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <12345>
+Error: %d - Function eregi() is deprecated
 int(1)
 
-Arg value -2345
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <-2345>
+Error: %d - Function eregi() is deprecated
 bool(false)
 
-Arg value 10.5
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <10.5>
+Error: %d - Function eregi() is deprecated
 int(1)
 
-Arg value -10.5
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <-10.5>
+Error: %d - Function eregi() is deprecated
 int(1)
 
-Arg value 101234567000
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <101234567000>
+Error: %d - Function eregi() is deprecated
 int(1)
 
-Arg value 1.07654321E-9
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <1.07654321E-9>
+Error: %d - Function eregi() is deprecated
 int(1)
 
-Arg value 0.5
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <0.5>
+Error: %d - Function eregi() is deprecated
 bool(false)
-Error: 8 - Array to string conversion, %seregi_variation_002.php(%d)
 
-Arg value Array
-Error: 8192 - Function eregi() is deprecated, %s(74)
-Error: 2 - eregi() expects parameter 2 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %seregi_variation_002.php(%d)
-
-Arg value Array
-Error: 8192 - Function eregi() is deprecated, %s(74)
-Error: 2 - eregi() expects parameter 2 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %seregi_variation_002.php(%d)
-
-Arg value Array
-Error: 8192 - Function eregi() is deprecated, %s(74)
-Error: 2 - eregi() expects parameter 2 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %seregi_variation_002.php(%d)
-
-Arg value Array
-Error: 8192 - Function eregi() is deprecated, %s(74)
-Error: 2 - eregi() expects parameter 2 to be string, array given, %s(74)
-NULL
-Error: 8 - Array to string conversion, %seregi_variation_002.php(%d)
-
-Arg value Array
-Error: 8192 - Function eregi() is deprecated, %s(74)
-Error: 2 - eregi() expects parameter 2 to be string, array given, %s(74)
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function eregi() is deprecated
+Error: %d - eregi() expects parameter 2 to be string, array given
 NULL
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(74)
-bool(false)
-
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(74)
-bool(false)
-
-Arg value 1
-Error: 8192 - Function eregi() is deprecated, %s(74)
-int(1)
-
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(74)
-bool(false)
-
-Arg value 1
-Error: 8192 - Function eregi() is deprecated, %s(74)
-int(1)
-
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(74)
-bool(false)
-
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(74)
-bool(false)
-
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(74)
-bool(false)
-Error: 4096 - Object of class stdClass could not be converted to string, %s(73)
-
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(74)
-Error: 2 - eregi() expects parameter 2 to be string, object given, %s(74)
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function eregi() is deprecated
+Error: %d - eregi() expects parameter 2 to be string, array given
 NULL
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function eregi() is deprecated
+Error: %d - eregi() expects parameter 2 to be string, array given
+NULL
+
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function eregi() is deprecated
+Error: %d - eregi() expects parameter 2 to be string, array given
+NULL
+
+Error: 8 - Array to string conversion
+Arg value <Array>
+Error: %d - Function eregi() is deprecated
+Error: %d - eregi() expects parameter 2 to be string, array given
+NULL
+
+Arg value <>
+Error: %d - Function eregi() is deprecated
 bool(false)
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(74)
+Arg value <>
+Error: %d - Function eregi() is deprecated
 bool(false)
+
+Arg value <1>
+Error: %d - Function eregi() is deprecated
+int(1)
+
+Arg value <>
+Error: %d - Function eregi() is deprecated
+bool(false)
+
+Arg value <1>
+Error: %d - Function eregi() is deprecated
+int(1)
+
+Arg value <>
+Error: %d - Function eregi() is deprecated
+bool(false)
+
+Arg value <>
+Error: %d - Function eregi() is deprecated
+bool(false)
+
+Arg value <>
+Error: %d - Function eregi() is deprecated
+bool(false)
+
+Error: 4096 - Object of class stdClass could not be converted to string
+Arg value <>
+Error: %d - Function eregi() is deprecated
+Error: %d - eregi() expects parameter 2 to be string, object given
+NULL
+
+Arg value <>
+Error: %d - Function eregi() is deprecated
+bool(false)
+
+Arg value <>
+Error: %d - Function eregi() is deprecated
+bool(false)
+
 Done
