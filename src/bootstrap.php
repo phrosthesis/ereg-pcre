@@ -104,7 +104,7 @@ if (!function_exists('ereg_replace')) {
      * @param string $string
      * @return string|false|null
      */
-    function ereg_replace($pattern = '', $replacement = '', string $string = '')
+    function ereg_replace($pattern = '', $replacement = '', $string = '')
     {
         PcreLimb::deprecate(__FUNCTION__);
 
@@ -146,7 +146,7 @@ if (!function_exists('eregi_replace')) {
      * @param string $string
      * @return string|false|null
      */
-    function eregi_replace($pattern = '', $replacement = '', string $string = '')
+    function eregi_replace($pattern = '', $replacement = '', $string = '')
     {
         PcreLimb::deprecate(__FUNCTION__);
 
