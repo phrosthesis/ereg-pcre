@@ -30,16 +30,16 @@ jobs:
           coverage: none
           tools: composer
 
-      - name: Composer install
+      - name: Composer Install
         uses: ramsey/composer-install@v4
 
-      - name: Run tests
+      - name: Run Tests
         env:
           NO_INTERACTION: 1
           TEST_PHP_JUNIT: junit.xml
         run: php run-tests.php -P -d auto_prepend_file=vendor/autoload.php
 
-      - name: Publish report
+      - name: Publish Report
         uses: mikepenz/action-junit-report@v6
         if: success() || failure()
         with:
