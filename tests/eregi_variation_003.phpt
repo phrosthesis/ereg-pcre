@@ -73,21 +73,21 @@ $values = array(
 // loop through each element of the array for registers
 
 foreach ($values as $value) {
-    echo "\nArg value $value \n";
+    echo PHP_EOL, "Arg value '$value'", PHP_EOL;
     var_dump(eregi($pattern, $string, $value));
     var_dump($value);
 }
 
-echo 'Done';
+echo PHP_EOL, 'Done';
 
 ?>
 --EXPECTF--
 *** Testing eregi() : usage variations ***
-Error: 8 - Undefined variable: undefined_var, %s(61)
-Error: 8 - Undefined variable: unset_var, %s(64)
+Error: 8 - Undefined variable: undefined_var
+Error: 8 - Undefined variable: unset_var
 
-Arg value 0
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '0'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -96,8 +96,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 1
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '1'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -106,8 +106,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 12345
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '12345'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -116,8 +116,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value -2345
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '-2345'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -126,8 +126,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 10.5
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '10.5'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -136,8 +136,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value -10.5
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '-10.5'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -146,8 +146,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 101234567000
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '101234567000'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -156,8 +156,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 1.07654321E-9
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '1.07654321E-9'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -166,8 +166,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 0.5
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '0.5'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -176,8 +176,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value ''
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -186,8 +186,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value ''
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -196,8 +196,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 1
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '1'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -206,8 +206,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value ''
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -216,8 +216,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 1
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value '1'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -226,8 +226,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value ''
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -236,8 +236,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value ''
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -246,8 +246,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value ''
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -256,8 +256,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value string
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value 'string'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -266,19 +266,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value string
-Error: 8192 - Function eregi() is deprecated, %s(71)
-int(6)
-array(2) {
-  [0]=>
-  string(6) "hello!"
-  [1]=>
-  string(2) "el"
-}
-Error: 4096 - Object of class stdClass could not be converted to string, %s(70)
-
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value 'string'
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -287,8 +276,9 @@ array(2) {
   string(2) "el"
 }
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Error: 4096 - Object of class stdClass could not be converted to string
+Arg value ''
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -297,8 +287,8 @@ array(2) {
   string(2) "el"
 }
 
-Arg value
-Error: 8192 - Function eregi() is deprecated, %s(71)
+Arg value ''
+Error: %d - Function eregi() is deprecated
 int(6)
 array(2) {
   [0]=>
@@ -306,4 +296,15 @@ array(2) {
   [1]=>
   string(2) "el"
 }
+
+Arg value ''
+Error: %d - Function eregi() is deprecated
+int(6)
+array(2) {
+  [0]=>
+  string(6) "hello!"
+  [1]=>
+  string(2) "el"
+}
+
 Done
