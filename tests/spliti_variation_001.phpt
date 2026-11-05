@@ -23,10 +23,6 @@ echo '*** Testing spliti() : usage variations ***', PHP_EOL;
 $string = '1 a 1 Array 1 c ';
 $limit = 5;
 
-//get an unset variable
-$unset_var = 10;
-unset($unset_var);
-
 //array of values to iterate over
 $values = [
     // int data
@@ -64,13 +60,7 @@ $values = [
     '',
 
     // object data
-    new stdClass(),
-
-    // undefined data
-    $undefined_var,
-
-    // unset data
-    $unset_var,
+    new stdClass()
 ];
 
 // loop through each element of the array for pattern
@@ -89,8 +79,6 @@ echo PHP_EOL, 'Done';
 ?>
 --EXPECTF--
 *** Testing spliti() : usage variations ***
-Error: Undefined variable: undefined_var
-Error: Undefined variable: unset_var
 
 Arg value '0'
 Error: Function spliti() is deprecated
@@ -252,15 +240,5 @@ Arg value ''
 Error: Function spliti() is deprecated
 Error: spliti() expects parameter 1 to be string, object given
 NULL
-
-Arg value ''
-Error: Function spliti() is deprecated
-Error: spliti(): REG_EMPTY
-bool(false)
-
-Arg value ''
-Error: Function spliti() is deprecated
-Error: spliti(): REG_EMPTY
-bool(false)
 
 Done

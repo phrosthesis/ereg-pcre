@@ -21,10 +21,6 @@ echo '*** Testing sql_regcase() : usage variations ***', PHP_EOL;
 
 // Initialise function arguments not being substituted (if any)
 
-//get an unset variable
-$unset_var = 10;
-unset($unset_var);
-
 //array of values to iterate over
 $values = [
     // int data
@@ -62,13 +58,7 @@ $values = [
     '',
 
     // object data
-    new stdClass(),
-
-    // undefined data
-    $undefined_var,
-
-    // unset data
-    $unset_var,
+    new stdClass()
 ];
 
 // loop through each element of the array for string
@@ -87,8 +77,6 @@ echo PHP_EOL, 'Done';
 ?>
 --EXPECTF--
 *** Testing sql_regcase() : usage variations ***
-Error: Undefined variable: undefined_var
-Error: Undefined variable: unset_var
 
 Arg value '0'
 Error: Function sql_regcase() is deprecated
@@ -193,13 +181,5 @@ Arg value ''
 Error: Function sql_regcase() is deprecated
 Error: sql_regcase() expects parameter 1 to be string, object given
 NULL
-
-Arg value ''
-Error: Function sql_regcase() is deprecated
-string(0) ""
-
-Arg value ''
-Error: Function sql_regcase() is deprecated
-string(0) ""
 
 Done

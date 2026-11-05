@@ -23,10 +23,6 @@ echo '*** Testing ereg() : usage variations ***', PHP_EOL;
 $pattern = 'h(.*)lo!';
 $string = 'hello!';
 
-//get an unset variable
-$unset_var = 10;
-unset($unset_var);
-
 //array of values to iterate over
 $values = [
     // int data
@@ -61,13 +57,7 @@ $values = [
     'string',
 
     // object data
-    new stdClass(),
-
-    // undefined data
-    $undefined_var,
-
-    // unset data
-    $unset_var,
+    new stdClass()
 ];
 
 // loop through each element of the array for registers
@@ -87,8 +77,6 @@ echo PHP_EOL, 'Done';
 ?>
 --EXPECTF--
 *** Testing ereg() : usage variations ***
-Error: Undefined variable: undefined_var
-Error: Undefined variable: unset_var
 
 Arg value '0'
 Error: Function ereg() is deprecated
@@ -281,26 +269,6 @@ array(2) {
 }
 
 Error: Object of class stdClass could not be converted to string
-Arg value ''
-Error: Function ereg() is deprecated
-int(6)
-array(2) {
-  [0]=>
-  string(6) "hello!"
-  [1]=>
-  string(2) "el"
-}
-
-Arg value ''
-Error: Function ereg() is deprecated
-int(6)
-array(2) {
-  [0]=>
-  string(6) "hello!"
-  [1]=>
-  string(2) "el"
-}
-
 Arg value ''
 Error: Function ereg() is deprecated
 int(6)

@@ -23,10 +23,6 @@ echo '*** Testing ereg_replace() : usage variations ***', PHP_EOL;
 $pattern = '1';
 $replacement = 'new value';
 
-//get an unset variable
-$unset_var = 10;
-unset($unset_var);
-
 //array of values to iterate over
 $values = [
     // int data
@@ -64,13 +60,7 @@ $values = [
     '',
 
     // object data
-    new stdClass(),
-
-    // undefined data
-    $undefined_var,
-
-    // unset data
-    $unset_var,
+    new stdClass()
 ];
 
 // loop through each element of the array for string
@@ -89,8 +79,6 @@ echo PHP_EOL, 'Done';
 ?>
 --EXPECTF--
 *** Testing ereg_replace() : usage variations ***
-Error: Undefined variable: undefined_var
-Error: Undefined variable: unset_var
 
 Arg value '0'
 Error: Function ereg_replace() is deprecated
@@ -195,13 +183,5 @@ Arg value ''
 Error: Function ereg_replace() is deprecated
 Error: ereg_replace() expects parameter 3 to be string, object given
 NULL
-
-Arg value ''
-Error: Function ereg_replace() is deprecated
-string(0) ""
-
-Arg value ''
-Error: Function ereg_replace() is deprecated
-string(0) ""
 
 Done

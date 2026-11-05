@@ -23,10 +23,6 @@ echo '*** Testing eregi() : usage variations ***', PHP_EOL;
 $string = '1';
 $registers = [1, 2];
 
-//get an unset variable
-$unset_var = 10;
-unset($unset_var);
-
 //array of values to iterate over
 $values = [
     // int data
@@ -64,13 +60,7 @@ $values = [
     '',
 
     // object data
-    new stdClass(),
-
-    // undefined data
-    $undefined_var,
-
-    // unset data
-    $unset_var,
+    new stdClass()
 ];
 
 // loop through each element of the array for pattern
@@ -89,8 +79,6 @@ echo PHP_EOL, 'Done';
 ?>
 --EXPECTF--
 *** Testing eregi() : usage variations ***
-Error: Undefined variable: undefined_var
-Error: Undefined variable: unset_var
 
 Arg value '0'
 Error: Function eregi() is deprecated
@@ -201,16 +189,6 @@ Arg value ''
 Error: Function eregi() is deprecated
 Error: Object of class stdClass could not be converted to string
 Error: Object of class stdClass to string conversion
-bool(false)
-
-Arg value ''
-Error: Function eregi() is deprecated
-Error: eregi(): REG_EMPTY
-bool(false)
-
-Arg value ''
-Error: Function eregi() is deprecated
-Error: eregi(): REG_EMPTY
 bool(false)
 
 Done

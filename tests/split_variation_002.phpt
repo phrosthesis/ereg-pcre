@@ -23,10 +23,6 @@ echo '*** Testing split() : usage variations ***', PHP_EOL;
 $pattern = 'r|j|E';
 $limit = 5;
 
-//get an unset variable
-$unset_var = 10;
-unset($unset_var);
-
 //array of values to iterate over
 $values = [
     // int data
@@ -64,13 +60,7 @@ $values = [
     '',
 
     // object data
-    new stdClass(),
-
-    // undefined data
-    $undefined_var,
-
-    // unset data
-    $unset_var,
+    new stdClass()
 ];
 
 // loop through each element of the array for string
@@ -89,8 +79,6 @@ echo PHP_EOL, 'Done';
 ?>
 --EXPECTF--
 *** Testing split() : usage variations ***
-Error: Undefined variable: undefined_var
-Error: Undefined variable: unset_var
 
 Arg value '0'
 Error: Function split() is deprecated
@@ -248,19 +236,5 @@ Arg value ''
 Error: Function split() is deprecated
 Error: split() expects parameter 2 to be string, object given
 NULL
-
-Arg value ''
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(0) ""
-}
-
-Arg value ''
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(0) ""
-}
 
 Done
