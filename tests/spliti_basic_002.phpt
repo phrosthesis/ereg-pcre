@@ -16,7 +16,7 @@ Test spliti() function : basic functionality - test a number of simple spliti, w
 
 echo "*** Testing ereg() : basic functionality ***\n";
 
-include dirname(__FILE__) . '/regular_expressions.inc';
+include __DIR__ . '/regular_expressions.inc';
 
 foreach ($expressions as $re) {
     list($pattern, $string) = $re;

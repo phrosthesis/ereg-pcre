@@ -28,7 +28,7 @@ $unset_var = 10;
 unset($unset_var);
 
 //array of values to iterate over
-$values = array(
+$values = [
     // int data
     0,
     1,
@@ -43,11 +43,11 @@ $values = array(
     .5,
 
     // array data
-    array(),
-    array(0),
-    array(1),
-    array(1, 2),
-    array('color' => 'red', 'item' => 'pen'),
+    [],
+    [0],
+    [1],
+    [1, 2],
+    ['color' => 'red', 'item' => 'pen'],
 
     // null data
     null,
@@ -71,7 +71,7 @@ $values = array(
 
     // unset data
     $unset_var,
-);
+];
 
 // loop through each element of the array for string
 

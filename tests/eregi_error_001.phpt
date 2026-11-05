@@ -20,7 +20,7 @@ echo "*** Testing eregi() : error conditions ***\n";
 echo "\n-- Testing eregi() function with more than expected no. of arguments --\n";
 $pattern = 'string_val';
 $string = 'string_val';
-$registers = array(1, 2);
+$registers = [1, 2];
 $extra_arg = 10;
 var_dump(eregi($pattern, $string, $registers, $extra_arg));
 

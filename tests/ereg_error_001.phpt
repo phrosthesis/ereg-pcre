@@ -20,7 +20,7 @@ echo '*** Testing ereg() : error conditions ***', PHP_EOL;
 echo PHP_EOL, '-- Testing ereg() function with more than expected no. of arguments --', PHP_EOL;
 $pattern = 'string_val';
 $string = 'string_val';
-$registers = array(1, 2);
+$registers = [1, 2];
 $extra_arg = 10;
 var_dump(ereg($pattern, $string, $registers, $extra_arg));
 

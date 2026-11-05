@@ -16,7 +16,7 @@ Test ereg_replace() function : basic functionality
 
 echo '*** Testing ereg() : basic functionality ***', PHP_EOL;
 
-include dirname(__FILE__) . '/regular_expressions.inc';
+include __DIR__ . '/regular_expressions.inc';
 
 $replacement = '[this is a replacement]';
 

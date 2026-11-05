@@ -16,7 +16,7 @@ Test ereg() function : basic functionality (without $regs)
 
 echo '*** Testing ereg() : basic functionality ***', PHP_EOL;
 
-include dirname(__FILE__) . '/regular_expressions.inc';
+include __DIR__ . '/regular_expressions.inc';
 
 foreach ($expressions as $re) {
     list($pattern, $string) = $re;
