@@ -43,6 +43,7 @@
     "scripts": {
         "run-tests": [
             "Composer\\Config::disableProcessTimeout",
+            "@putenv XDEBUG_MODE=",
             "@php run-tests.php -P -q -d auto_prepend_file=vendor/autoload.php"
         ]
     },
