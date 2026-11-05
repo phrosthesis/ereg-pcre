@@ -64,9 +64,9 @@ $values = [
 
 foreach ($values as $value) {
     try {
-        echo PHP_EOL, "Arg value '$value'", PHP_EOL;
+        echo PHP_EOL, "Arg value: '$value'", PHP_EOL;
     } catch (Throwable $err) {
-        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value ''", PHP_EOL;
+        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value: ''", PHP_EOL;
     }
     var_dump(ereg($pattern, $string, $value));
     var_dump($value);
@@ -78,7 +78,7 @@ echo PHP_EOL, 'Done';
 --EXPECTF--
 *** Testing ereg() : usage variations ***
 
-Arg value '0'
+Arg value: '0'
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -88,7 +88,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '1'
+Arg value: '1'
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -98,7 +98,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '12345'
+Arg value: int(12345)
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -108,7 +108,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '-2345'
+Arg value: int(-2345)
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -118,7 +118,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '10.5'
+Arg value: float(10.5)
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -128,7 +128,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '-10.5'
+Arg value: float(-10.5)
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -138,7 +138,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '101234567000'
+Arg value: '101234567000'
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -148,7 +148,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '1.07654321E-9'
+Arg value: '1.07654321E-9'
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -158,7 +158,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '0.5'
+Arg value: float(0.5)
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -168,7 +168,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -178,7 +178,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -188,7 +188,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '1'
+Arg value: '1'
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -198,7 +198,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -208,7 +208,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value '1'
+Arg value: '1'
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -218,7 +218,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -228,7 +228,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -238,7 +238,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -248,7 +248,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 'string'
+Arg value: 'string'
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -258,7 +258,7 @@ array(2) {
   string(2) "el"
 }
 
-Arg value 'string'
+Arg value: 'string'
 Error: Function ereg() is deprecated
 int(6)
 array(2) {
@@ -269,7 +269,7 @@ array(2) {
 }
 
 Error: Object of class stdClass could not be converted to string
-Arg value ''
+Arg value: ''
 Error: Function ereg() is deprecated
 int(6)
 array(2) {

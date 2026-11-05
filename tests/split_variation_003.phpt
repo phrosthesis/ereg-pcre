@@ -64,9 +64,9 @@ $values = [
 
 foreach ($values as $value) {
     try {
-        echo PHP_EOL, "Arg value '$value'", PHP_EOL;
+        echo PHP_EOL, "Arg value: '$value'", PHP_EOL;
     } catch (Throwable $err) {
-        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value ''", PHP_EOL;
+        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value: ''", PHP_EOL;
     }
     var_dump(split($pattern, $string, $value));
 }
@@ -77,7 +77,7 @@ echo PHP_EOL, 'Done';
 --EXPECTF--
 *** Testing split() : usage variations ***
 
-Arg value '10.5'
+Arg value: float(10.5)
 Error: Function split() is deprecated
 array(5) {
   [0]=>
@@ -92,21 +92,21 @@ array(5) {
   string(1) "5"
 }
 
-Arg value '-10.5'
+Arg value: float(-10.5)
 Error: Function split() is deprecated
 array(1) {
   [0]=>
   string(9) "1 2 3 4 5"
 }
 
-Arg value '1.07654321E-9'
+Arg value: '1.07654321E-9'
 Error: Function split() is deprecated
 array(1) {
   [0]=>
   string(9) "1 2 3 4 5"
 }
 
-Arg value '0.5'
+Arg value: float(0.5)
 Error: Function split() is deprecated
 array(1) {
   [0]=>
@@ -114,99 +114,99 @@ array(1) {
 }
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, array given
 NULL
 
-Arg value ''
+Arg value: ''
 Error: Function split() is deprecated
 array(1) {
   [0]=>
   string(9) "1 2 3 4 5"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function split() is deprecated
 array(1) {
   [0]=>
   string(9) "1 2 3 4 5"
 }
 
-Arg value '1'
+Arg value: '1'
 Error: Function split() is deprecated
 array(1) {
   [0]=>
   string(9) "1 2 3 4 5"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function split() is deprecated
 array(1) {
   [0]=>
   string(9) "1 2 3 4 5"
 }
 
-Arg value '1'
+Arg value: '1'
 Error: Function split() is deprecated
 array(1) {
   [0]=>
   string(9) "1 2 3 4 5"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function split() is deprecated
 array(1) {
   [0]=>
   string(9) "1 2 3 4 5"
 }
 
-Arg value ''
+Arg value: ''
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, string given
 NULL
 
-Arg value ''
+Arg value: ''
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, string given
 NULL
 
-Arg value 'string'
+Arg value: 'string'
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, string given
 NULL
 
-Arg value 'string'
+Arg value: 'string'
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, string given
 NULL
 
 Error: Object of class stdClass could not be converted to string
-Arg value ''
+Arg value: ''
 Error: Function split() is deprecated
 Error: split() expects parameter 3 to be long, object given
 NULL

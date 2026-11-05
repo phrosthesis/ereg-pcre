@@ -65,9 +65,9 @@ $values = [
 
 foreach ($values as $value) {
     try {
-        echo PHP_EOL, "Arg value '$value'", PHP_EOL;
+        echo PHP_EOL, "Arg value: '$value'", PHP_EOL;
     } catch (Throwable $err) {
-        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value ''", PHP_EOL;
+        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value: ''", PHP_EOL;
     }
     var_dump(sql_regcase($value));
 }
@@ -78,106 +78,106 @@ echo PHP_EOL, 'Done';
 --EXPECTF--
 *** Testing sql_regcase() : usage variations ***
 
-Arg value '0'
+Arg value: '0'
 Error: Function sql_regcase() is deprecated
 string(1) "0"
 
-Arg value '1'
+Arg value: '1'
 Error: Function sql_regcase() is deprecated
 string(1) "1"
 
-Arg value '12345'
+Arg value: int(12345)
 Error: Function sql_regcase() is deprecated
 string(5) "12345"
 
-Arg value '-2345'
+Arg value: int(-2345)
 Error: Function sql_regcase() is deprecated
 string(5) "-2345"
 
-Arg value '10.5'
+Arg value: float(10.5)
 Error: Function sql_regcase() is deprecated
 string(4) "10.5"
 
-Arg value '-10.5'
+Arg value: float(-10.5)
 Error: Function sql_regcase() is deprecated
 string(5) "-10.5"
 
-Arg value '101234567000'
+Arg value: '101234567000'
 Error: Function sql_regcase() is deprecated
 string(12) "101234567000"
 
-Arg value '1.07654321E-9'
+Arg value: '1.07654321E-9'
 Error: Function sql_regcase() is deprecated
 string(16) "1.07654321[Ee]-9"
 
-Arg value '0.5'
+Arg value: float(0.5)
 Error: Function sql_regcase() is deprecated
 string(3) "0.5"
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function sql_regcase() is deprecated
 Error: sql_regcase() expects parameter 1 to be string, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function sql_regcase() is deprecated
 Error: sql_regcase() expects parameter 1 to be string, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function sql_regcase() is deprecated
 Error: sql_regcase() expects parameter 1 to be string, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function sql_regcase() is deprecated
 Error: sql_regcase() expects parameter 1 to be string, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function sql_regcase() is deprecated
 Error: sql_regcase() expects parameter 1 to be string, array given
 NULL
 
-Arg value ''
+Arg value: ''
 Error: Function sql_regcase() is deprecated
 string(0) ""
 
-Arg value ''
+Arg value: ''
 Error: Function sql_regcase() is deprecated
 string(0) ""
 
-Arg value '1'
+Arg value: '1'
 Error: Function sql_regcase() is deprecated
 string(1) "1"
 
-Arg value ''
+Arg value: ''
 Error: Function sql_regcase() is deprecated
 string(0) ""
 
-Arg value '1'
+Arg value: '1'
 Error: Function sql_regcase() is deprecated
 string(1) "1"
 
-Arg value ''
+Arg value: ''
 Error: Function sql_regcase() is deprecated
 string(0) ""
 
-Arg value ''
+Arg value: ''
 Error: Function sql_regcase() is deprecated
 string(0) ""
 
-Arg value ''
+Arg value: ''
 Error: Function sql_regcase() is deprecated
 string(0) ""
 
 Error: Object of class stdClass could not be converted to string
-Arg value ''
+Arg value: ''
 Error: Function sql_regcase() is deprecated
 Error: sql_regcase() expects parameter 1 to be string, object given
 NULL

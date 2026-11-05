@@ -67,9 +67,9 @@ $values = [
 
 foreach ($values as $value) {
     try {
-        echo PHP_EOL, "Arg value '$value'", PHP_EOL;
+        echo PHP_EOL, "Arg value: '$value'", PHP_EOL;
     } catch (Throwable $err) {
-        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value ''", PHP_EOL;
+        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value: ''", PHP_EOL;
     }
     var_dump(eregi_replace($pattern, $replacement, $value));
 }
@@ -80,106 +80,106 @@ echo PHP_EOL, 'Done';
 --EXPECTF--
 *** Testing eregi_replace() : usage variations ***
 
-Arg value '0'
+Arg value: '0'
 Error: Function eregi_replace() is deprecated
 string(1) "0"
 
-Arg value '1'
+Arg value: '1'
 Error: Function eregi_replace() is deprecated
 string(9) "new value"
 
-Arg value '12345'
+Arg value: int(12345)
 Error: Function eregi_replace() is deprecated
 string(13) "new value2345"
 
-Arg value '-2345'
+Arg value: int(-2345)
 Error: Function eregi_replace() is deprecated
 string(5) "-2345"
 
-Arg value '10.5'
+Arg value: float(10.5)
 Error: Function eregi_replace() is deprecated
 string(12) "new value0.5"
 
-Arg value '-10.5'
+Arg value: float(-10.5)
 Error: Function eregi_replace() is deprecated
 string(13) "-new value0.5"
 
-Arg value '101234567000'
+Arg value: '101234567000'
 Error: Function eregi_replace() is deprecated
 string(28) "new value0new value234567000"
 
-Arg value '1.07654321E-9'
+Arg value: '1.07654321E-9'
 Error: Function eregi_replace() is deprecated
 string(29) "new value.0765432new valueE-9"
 
-Arg value '0.5'
+Arg value: float(0.5)
 Error: Function eregi_replace() is deprecated
 string(3) "0.5"
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
 NULL
 
 Error: Array to string conversion
-Arg value 'Array'
+Arg value: 'Array'
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
 NULL
 
-Arg value ''
+Arg value: ''
 Error: Function eregi_replace() is deprecated
 string(0) ""
 
-Arg value ''
+Arg value: ''
 Error: Function eregi_replace() is deprecated
 string(0) ""
 
-Arg value '1'
+Arg value: '1'
 Error: Function eregi_replace() is deprecated
 string(9) "new value"
 
-Arg value ''
+Arg value: ''
 Error: Function eregi_replace() is deprecated
 string(0) ""
 
-Arg value '1'
+Arg value: '1'
 Error: Function eregi_replace() is deprecated
 string(9) "new value"
 
-Arg value ''
+Arg value: ''
 Error: Function eregi_replace() is deprecated
 string(0) ""
 
-Arg value ''
+Arg value: ''
 Error: Function eregi_replace() is deprecated
 string(0) ""
 
-Arg value ''
+Arg value: ''
 Error: Function eregi_replace() is deprecated
 string(0) ""
 
 Error: Object of class stdClass could not be converted to string
-Arg value ''
+Arg value: ''
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, object given
 NULL
