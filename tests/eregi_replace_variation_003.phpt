@@ -10,6 +10,8 @@ Test eregi_replace() function : usage variations - unexpected type arg 3
  * Alias to functions:
  */
 
+require __DIR__ . '/dump.inc';
+
 function test_error_handler(int $err_no, string $err_msg)
 {
     echo "Error: $err_msg", PHP_EOL;
@@ -47,16 +49,12 @@ $values = [
 
     // null data
     null,
-    null,
 
     // boolean data
     true,
     false,
-    true,
-    false,
 
     // empty data
-    '',
     '',
 
     // object data
@@ -66,12 +64,8 @@ $values = [
 // loop through each element of the array for string
 
 foreach ($values as $value) {
-    try {
-        echo PHP_EOL, "Arg value: '$value'", PHP_EOL;
-    } catch (Throwable $err) {
-        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value: ''", PHP_EOL;
-    }
-    var_dump(eregi_replace($pattern, $replacement, $value));
+    echo PHP_EOL, 'Arg value: ', test_dump($value), PHP_EOL;
+    echo test_dump(eregi_replace($pattern, $replacement, $value)), PHP_EOL;
 }
 
 echo PHP_EOL, 'Done';
@@ -80,11 +74,11 @@ echo PHP_EOL, 'Done';
 --EXPECTF--
 *** Testing eregi_replace() : usage variations ***
 
-Arg value: '0'
+Arg value: int(0)
 Error: Function eregi_replace() is deprecated
 string(1) "0"
 
-Arg value: '1'
+Arg value: int(1)
 Error: Function eregi_replace() is deprecated
 string(9) "new value"
 
@@ -104,11 +98,11 @@ Arg value: float(-10.5)
 Error: Function eregi_replace() is deprecated
 string(13) "-new value0.5"
 
-Arg value: '101234567000'
+Arg value: float(101234567000)
 Error: Function eregi_replace() is deprecated
 string(28) "new value0new value234567000"
 
-Arg value: '1.07654321E-9'
+Arg value: float(1.07654321E-9)
 Error: Function eregi_replace() is deprecated
 string(29) "new value.0765432new valueE-9"
 
@@ -116,72 +110,66 @@ Arg value: float(0.5)
 Error: Function eregi_replace() is deprecated
 string(3) "0.5"
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(0) []
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
-NULL
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(1) [
+    [0] =>
+    int(0)
+]
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
-NULL
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(1) [
+    [0] =>
+    int(1)
+]
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
-NULL
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(2) [
+    [0] =>
+    int(1)
+    [1] =>
+    int(2)
+]
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
-NULL
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(2) [
+    ["color"] =>
+    string(3) "red"
+    ["item"] =>
+    string(3) "pen"
+]
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, array given
-NULL
+null
 
-Arg value: ''
+Arg value: null
 Error: Function eregi_replace() is deprecated
 string(0) ""
 
-Arg value: ''
-Error: Function eregi_replace() is deprecated
-string(0) ""
-
-Arg value: '1'
+Arg value: bool(true)
 Error: Function eregi_replace() is deprecated
 string(9) "new value"
 
-Arg value: ''
+Arg value: bool(false)
 Error: Function eregi_replace() is deprecated
 string(0) ""
 
-Arg value: '1'
-Error: Function eregi_replace() is deprecated
-string(9) "new value"
-
-Arg value: ''
+Arg value: string(0) ""
 Error: Function eregi_replace() is deprecated
 string(0) ""
 
-Arg value: ''
-Error: Function eregi_replace() is deprecated
-string(0) ""
-
-Arg value: ''
-Error: Function eregi_replace() is deprecated
-string(0) ""
-
-Error: Object of class stdClass could not be converted to string
-Arg value: ''
+Arg value: object(stdClass) {}
 Error: Function eregi_replace() is deprecated
 Error: eregi_replace() expects parameter 3 to be string, object given
-NULL
+null
 
 Done
