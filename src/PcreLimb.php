@@ -197,10 +197,16 @@ final class PcreLimb
     }
 
     /**
+     * @param mixed $replacement
      * @return string|false
      */
-    public function replace(string $replacement, string $string)
+    public function replace($replacement, string $string)
     {
+        if (!\is_string($replacement)) {
+            $replacement = (int) $replacement;
+            $replacement = $replacement ? \chr($replacement & 0xFF) : '';
+        }
+
         return \preg_replace($this->toPcre(), $replacement, $string) ?? false;
     }
 

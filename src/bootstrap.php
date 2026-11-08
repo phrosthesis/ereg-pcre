@@ -100,7 +100,7 @@ if (!function_exists('ereg_replace')) {
      * @deprecated
      *
      * @param string $pattern
-     * @param string $replacement
+     * @param string|int $replacement
      * @param string $string
      * @return string|false|null
      */
@@ -116,16 +116,11 @@ if (!function_exists('ereg_replace')) {
             return false;
         }
 
-        if (!PcreLimb::checkArgIsString(__FUNCTION__, 2, $replacement)) {
-            return null;
-        }
-
         if (!PcreLimb::checkArgIsString(__FUNCTION__, 3, $string)) {
             return null;
         }
 
         $pattern = (string) $pattern;
-        $replacement = (string) $replacement;
         $string = (string) $string;
 
         $regex = new PcreLimb($pattern);
@@ -142,7 +137,7 @@ if (!function_exists('eregi_replace')) {
      * @deprecated
      *
      * @param string $pattern
-     * @param string $replacement
+     * @param string|int $replacement
      * @param string $string
      * @return string|false|null
      */
@@ -158,16 +153,11 @@ if (!function_exists('eregi_replace')) {
             return false;
         }
 
-        if (!PcreLimb::checkArgIsString(__FUNCTION__, 2, $replacement)) {
-            return null;
-        }
-
         if (!PcreLimb::checkArgIsString(__FUNCTION__, 3, $string)) {
             return null;
         }
 
         $pattern = (string) $pattern;
-        $replacement = (string) $replacement;
         $string = (string) $string;
 
         $regex = new PcreLimb($pattern, 'i');
