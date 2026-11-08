@@ -96,7 +96,7 @@ function test_quote(string $string): string
         if ($byte === "\e") {
             $byte = '\e';
         }
-        if ($byte < ' ' || $byte === "\x7F") {
+        if ($byte < ' ' || $byte >= "\x7F") {
             $byte = sprintf('\x%02X', ord($byte));
         }
     }
