@@ -65,7 +65,7 @@ $values = [
 
 foreach ($values as $value) {
     echo PHP_EOL, 'Arg value: ', test_dump($value), PHP_EOL;
-    echo test_dump(urlencode(ereg_replace($pattern, $value, $string))), PHP_EOL;
+    echo test_dump(ereg_replace($pattern, $value, $string)), PHP_EOL;
 }
 
 echo PHP_EOL, 'Done';
@@ -76,57 +76,57 @@ echo PHP_EOL, 'Done';
 
 Arg value: int(0)
 Error: Function ereg_replace() is deprecated
-string(5) "ho%21"
+string(3) "ho!"
 
 Arg value: int(1)
 Error: Function ereg_replace() is deprecated
-string(8) "h%01o%21"
+string(4) "h\x01o!"
 
 Arg value: int(12345)
 Error: Function ereg_replace() is deprecated
-string(6) "h9o%21"
+string(4) "h9o!"
 
 Arg value: int(-2345)
 Error: Function ereg_replace() is deprecated
-string(8) "h%D7o%21"
+string(4) "h\xD7o!"
 
 Arg value: float(10.5)
 Error: Function ereg_replace() is deprecated
-string(8) "h%0Ao%21"
+string(4) "h\no!"
 
 Arg value: float(-10.5)
 Error: Function ereg_replace() is deprecated
-string(8) "h%F6o%21"
+string(4) "h\xF6o!"
 
 Arg value: float(101234567000)
 Error: Function ereg_replace() is deprecated
-string(%d) "h%so%21"
+string(4) "h%so!"
 
 Arg value: float(1.07654321E-9)
 Error: Function ereg_replace() is deprecated
-string(5) "ho%21"
+string(3) "ho!"
 
 Arg value: float(0.5)
 Error: Function ereg_replace() is deprecated
-string(5) "ho%21"
+string(3) "ho!"
 
 Arg value: array(0) []
 Error: Function ereg_replace() is deprecated
-string(5) "ho%21"
+string(3) "ho!"
 
 Arg value: array(1) [
     [0] =>
     int(0)
 ]
 Error: Function ereg_replace() is deprecated
-string(8) "h%01o%21"
+string(4) "h\x01o!"
 
 Arg value: array(1) [
     [0] =>
     int(1)
 ]
 Error: Function ereg_replace() is deprecated
-string(8) "h%01o%21"
+string(4) "h\x01o!"
 
 Arg value: array(2) [
     [0] =>
@@ -135,7 +135,7 @@ Arg value: array(2) [
     int(2)
 ]
 Error: Function ereg_replace() is deprecated
-string(8) "h%01o%21"
+string(4) "h\x01o!"
 
 Arg value: array(2) [
     ["color"] =>
@@ -144,27 +144,27 @@ Arg value: array(2) [
     string(3) "pen"
 ]
 Error: Function ereg_replace() is deprecated
-string(8) "h%01o%21"
+string(4) "h\x01o!"
 
 Arg value: null
 Error: Function ereg_replace() is deprecated
-string(5) "ho%21"
+string(3) "ho!"
 
 Arg value: bool(true)
 Error: Function ereg_replace() is deprecated
-string(8) "h%01o%21"
+string(4) "h\x01o!"
 
 Arg value: bool(false)
 Error: Function ereg_replace() is deprecated
-string(5) "ho%21"
+string(3) "ho!"
 
 Arg value: string(0) ""
 Error: Function ereg_replace() is deprecated
-string(5) "ho%21"
+string(3) "ho!"
 
 Arg value: object(stdClass) {}
 Error: Function ereg_replace() is deprecated
 Error: Object of class stdClass could not be converted to int
-string(8) "h%01o%21"
+string(4) "h\x01o!"
 
 Done
