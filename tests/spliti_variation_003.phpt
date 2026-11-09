@@ -10,6 +10,8 @@ Test spliti() function : usage variations - unexpected type for arg 3
  * Alias to functions:
  */
 
+require __DIR__ . '/dump.inc';
+
 function test_error_handler(int $err_no, string $err_msg)
 {
     echo "Error: $err_msg", PHP_EOL;
@@ -20,7 +22,7 @@ set_error_handler('test_error_handler');
 echo '*** Testing spliti() : usage variations ***', PHP_EOL;
 
 // Initialise function arguments not being substituted (if any)
-$pattern = b'[[:space:]]';
+$pattern = '[[:space:]]';
 $string = '1 2 3 4 5';
 
 //array of values to iterate over
@@ -40,20 +42,15 @@ $values = [
 
     // null data
     null,
-    null,
 
     // boolean data
-    true,
-    false,
     true,
     false,
 
     // empty data
     '',
-    '',
 
     // string data
-    'string',
     'string',
 
     // object data
@@ -63,12 +60,8 @@ $values = [
 // loop through each element of the array for limit
 
 foreach ($values as $value) {
-    try {
-        echo PHP_EOL, "Arg value: '$value'", PHP_EOL;
-    } catch (Throwable $err) {
-        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value: ''", PHP_EOL;
-    }
-    var_dump(spliti($pattern, $string, $value));
+    echo PHP_EOL, 'Arg value: ', test_dump($value), PHP_EOL;
+    echo test_dump(spliti($pattern, $string, $value)), PHP_EOL;
 }
 
 echo PHP_EOL, 'Done';
@@ -79,136 +72,115 @@ echo PHP_EOL, 'Done';
 
 Arg value: float(10.5)
 Error: Function spliti() is deprecated
-array(5) {
-  [0]=>
-  string(1) "1"
-  [1]=>
-  string(1) "2"
-  [2]=>
-  string(1) "3"
-  [3]=>
-  string(1) "4"
-  [4]=>
-  string(1) "5"
-}
+array(5) [
+    [0] =>
+    string(1) "1"
+    [1] =>
+    string(1) "2"
+    [2] =>
+    string(1) "3"
+    [3] =>
+    string(1) "4"
+    [4] =>
+    string(1) "5"
+]
 
 Arg value: float(-10.5)
 Error: Function spliti() is deprecated
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
 
-Arg value: '1.07654321E-9'
+Arg value: float(1.07654321E-9)
 Error: Function spliti() is deprecated
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
 
 Arg value: float(0.5)
 Error: Function spliti() is deprecated
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(0) []
 Error: Function spliti() is deprecated
 Error: spliti() expects parameter 3 to be long, array given
-NULL
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(1) [
+    [0] =>
+    int(0)
+]
 Error: Function spliti() is deprecated
 Error: spliti() expects parameter 3 to be long, array given
-NULL
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(1) [
+    [0] =>
+    int(1)
+]
 Error: Function spliti() is deprecated
 Error: spliti() expects parameter 3 to be long, array given
-NULL
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(2) [
+    [0] =>
+    int(1)
+    [1] =>
+    int(2)
+]
 Error: Function spliti() is deprecated
 Error: spliti() expects parameter 3 to be long, array given
-NULL
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
+Arg value: array(2) [
+    ["color"] =>
+    string(3) "red"
+    ["item"] =>
+    string(3) "pen"
+]
 Error: Function spliti() is deprecated
 Error: spliti() expects parameter 3 to be long, array given
-NULL
+null
 
-Arg value: ''
+Arg value: null
 Error: Function spliti() is deprecated
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
 
-Arg value: ''
+Arg value: bool(true)
 Error: Function spliti() is deprecated
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
 
-Arg value: '1'
+Arg value: bool(false)
 Error: Function spliti() is deprecated
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
 
-Arg value: ''
-Error: Function spliti() is deprecated
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
-
-Arg value: '1'
-Error: Function spliti() is deprecated
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
-
-Arg value: ''
-Error: Function spliti() is deprecated
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
-
-Arg value: ''
+Arg value: string(0) ""
 Error: Function spliti() is deprecated
 Error: spliti() expects parameter 3 to be long, string given
-NULL
+null
 
-Arg value: ''
+Arg value: string(6) "string"
 Error: Function spliti() is deprecated
 Error: spliti() expects parameter 3 to be long, string given
-NULL
+null
 
-Arg value: 'string'
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, string given
-NULL
-
-Arg value: 'string'
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, string given
-NULL
-
-Error: Object of class stdClass could not be converted to string
-Arg value: ''
+Arg value: object(stdClass) {}
 Error: Function spliti() is deprecated
 Error: spliti() expects parameter 3 to be long, object given
-NULL
+null
 
 Done
