@@ -15,7 +15,7 @@ echo 'Done';
 
 ?>
 --EXPECTF--
-Strict Standards: Only variables should be passed by reference in %s on line %d
+%s: Only variables should be passed by reference in %s on line %d
 
 Deprecated: Function ereg() is deprecated in %s on line %d
 int(2)
