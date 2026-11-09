@@ -10,11 +10,6 @@ Test ereg_replace() function : usage variations - unexpected type arg 1
  * Alias to functions:
  */
 
-function test_error_handler(int $err_no, string $err_msg)
-{
-    echo "Error: $err_msg", PHP_EOL;
-}
-
 set_error_handler('test_error_handler');
 
 echo '*** Testing ereg_replace() : usage variations ***', PHP_EOL;

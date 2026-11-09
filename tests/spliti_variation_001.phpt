@@ -10,11 +10,6 @@ Test spliti() function : usage variations - unexpected type for arg 1
  * Alias to functions:
  */
 
-function test_error_handler(int $err_no, string $err_msg)
-{
-    echo "Error: $err_msg", PHP_EOL;
-}
-
 set_error_handler('test_error_handler');
 
 echo '*** Testing spliti() : usage variations ***', PHP_EOL;

@@ -10,11 +10,6 @@ Test eregi() function : usage variations - unexpected type for arg 3
  * Alias to functions:
  */
 
-function test_error_handler(int $err_no, string $err_msg)
-{
-    echo "Error: $err_msg", PHP_EOL;
-}
-
 set_error_handler('test_error_handler');
 
 echo '*** Testing eregi() : usage variations ***', PHP_EOL;

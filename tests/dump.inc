@@ -103,3 +103,13 @@ function test_quote(string $string): string
 
     return sprintf('"%s"', join($bytes));
 }
+
+/**
+ * @internal
+ *
+ * @return void
+ */
+function test_error_handler(int $err_no, string $err_msg)
+{
+    echo "Error: $err_msg", PHP_EOL;
+}

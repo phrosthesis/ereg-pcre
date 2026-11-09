@@ -10,11 +10,6 @@ Test sql_regcase() function : usage variations - unexpected arg type
  * Alias to functions: msql_regcase
  */
 
-function test_error_handler(int $err_no, string $err_msg)
-{
-    echo "Error: $err_msg", PHP_EOL;
-}
-
 set_error_handler('test_error_handler');
 
 echo '*** Testing sql_regcase() : usage variations ***', PHP_EOL;
