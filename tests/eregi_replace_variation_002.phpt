@@ -57,8 +57,9 @@ $values = [
 // loop through each element of the array for replacement
 
 foreach ($values as $value) {
-    echo PHP_EOL, 'Arg value: ', test_dump($value), PHP_EOL;
-    echo test_dump(eregi_replace($pattern, $value, $string)), PHP_EOL;
+    echo PHP_EOL, 'Arg value: ';
+    test_dump($value);
+    test_dump(eregi_replace($pattern, $value, $string));
 }
 
 echo PHP_EOL, 'Done';

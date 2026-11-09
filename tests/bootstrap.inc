@@ -6,20 +6,25 @@ declare(strict_types=1);
  * @internal
  *
  * @param mixed $value
+ * @return void
  */
-function test_dump($value, string $indent = ''): string
+function test_dump($value, string $indent = '')
 {
-    $dump = $indent . test_dump_header($value);
+    echo $indent, test_get_type($value);
 
     if (is_string($value)) {
-        $dump .= ' ' . test_quote($value);
+        echo ' ', test_quote($value);
     } elseif (is_array($value)) {
-        $dump .= ' [' . test_dump_entries($value, $indent) . ']';
+        echo ' [';
+        test_dump_entries($value, $indent);
+        echo ']';
     } elseif (is_object($value)) {
-        $dump .= ' {' . test_dump_entries((array) $value, $indent) . '}';
+        echo ' {';
+        test_dump_entries((array) $value, $indent);
+        echo '}';
     }
 
-    return $dump;
+    echo PHP_EOL;
 }
 
 /**
@@ -27,7 +32,7 @@ function test_dump($value, string $indent = ''): string
  *
  * @param mixed $value
  */
-function test_dump_header($value): string
+function test_get_type($value): string
 {
     if ($value === null) {
         return 'null';
@@ -62,23 +67,24 @@ function test_dump_header($value): string
 
 /**
  * @internal
+ *
+ * @return void
  */
-function test_dump_entries(array $entries, string $indent = ''): string
+function test_dump_entries(array $entries, string $indent = '')
 {
     if (!$entries) {
-        return '';
+        return;
     }
 
-    $dump = PHP_EOL . $indent;
+    echo PHP_EOL, $indent;
     foreach ($entries as $key => $value) {
         if (\is_string($key)) {
             $key = test_quote($key);
         }
-        $dump .= '    [' . $key . '] =>' . PHP_EOL . $indent;
-        $dump .= test_dump($value, $indent . '    ') . PHP_EOL . $indent;
+        echo '    [', $key, '] =>', PHP_EOL, $indent;
+        test_dump($value, $indent . '    ');
+        echo $indent;
     }
-
-    return $dump;
 }
 
 /**

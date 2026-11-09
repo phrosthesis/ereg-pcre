@@ -57,8 +57,9 @@ $values = [
 // loop through each element of the array for string
 
 foreach ($values as $value) {
-    echo PHP_EOL, 'Arg value: ', test_dump($value), PHP_EOL;
-    echo test_dump(ereg($pattern, $value, $registers)), PHP_EOL;
+    echo PHP_EOL, 'Arg value: ';
+    test_dump($value);
+    test_dump(ereg($pattern, $value, $registers));
 }
 
 echo PHP_EOL, 'Done';
