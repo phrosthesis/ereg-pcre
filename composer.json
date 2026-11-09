@@ -24,7 +24,7 @@
     },
     "autoload-dev": {
         "files": [
-            "tests/dump.inc"
+            "tests/bootstrap.inc"
         ]
     },
     "require": {
