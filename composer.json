@@ -22,6 +22,11 @@
             "src/bootstrap.php"
         ]
     },
+    "autoload-dev": {
+        "files": [
+            "tests/dump.inc"
+        ]
+    },
     "require": {
         "php": ">=7.0",
         "ext-pcre": "*"

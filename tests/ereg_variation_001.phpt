@@ -10,8 +10,6 @@ Test ereg() function : usage variations - unexpected type arg 1
  * Alias to functions:
  */
 
-require __DIR__ . '/dump.inc';
-
 function test_error_handler(int $err_no, string $err_msg)
 {
     echo "Error: $err_msg", PHP_EOL;

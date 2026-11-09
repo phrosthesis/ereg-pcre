@@ -10,8 +10,6 @@ Test sql_regcase() function : usage variations - unexpected arg type
  * Alias to functions: msql_regcase
  */
 
-require __DIR__ . '/dump.inc';
-
 function test_error_handler(int $err_no, string $err_msg)
 {
     echo "Error: $err_msg", PHP_EOL;
