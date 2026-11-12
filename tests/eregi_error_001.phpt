@@ -37,15 +37,15 @@ echo 'Done';
 
 -- Testing eregi() function with more than expected no. of arguments --
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 
-Warning: eregi() expects at most 3 parameters, 4 given in %s on line %d
+Warning: eregi() expects at most 3 parameters, 4 given
 NULL
 
 -- Testing eregi() function with less than expected no. of arguments --
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 
-Warning: eregi() expects at least 2 parameters, 1 given in %s on line %d
+Warning: eregi() expects at least 2 parameters, 1 given
 NULL
 Done

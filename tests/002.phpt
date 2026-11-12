@@ -4,9 +4,9 @@ RegReplace test 2
 <?php
 
 $a = 'abc123';
-echo ereg_replace('123', '', $a);
+test_dump(ereg_replace('123', '', $a));
 
 ?>
 --EXPECTF--
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
-abc
+Deprecated: Function ereg_replace() is deprecated
+string(3) "abc"

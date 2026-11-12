@@ -65,7 +65,7 @@ echo PHP_EOL, 'Done';
 *** Testing spliti() : usage variations ***
 
 Arg value: float(10.5)
-Error: Function spliti() is deprecated
+Deprecated: Function spliti() is deprecated
 array(5) [
     [0] =>
     string(1) "1"
@@ -80,45 +80,45 @@ array(5) [
 ]
 
 Arg value: float(-10.5)
-Error: Function spliti() is deprecated
+Deprecated: Function spliti() is deprecated
 array(1) [
     [0] =>
     string(9) "1 2 3 4 5"
 ]
 
 Arg value: float(1.07654321E-9)
-Error: Function spliti() is deprecated
+Deprecated: Function spliti() is deprecated
 array(1) [
     [0] =>
     string(9) "1 2 3 4 5"
 ]
 
 Arg value: float(0.5)
-Error: Function spliti() is deprecated
+Deprecated: Function spliti() is deprecated
 array(1) [
     [0] =>
     string(9) "1 2 3 4 5"
 ]
 
 Arg value: array(0) []
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, array given
+Deprecated: Function spliti() is deprecated
+Warning: spliti() expects parameter 3 to be long, array given
 null
 
 Arg value: array(1) [
     [0] =>
     int(0)
 ]
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, array given
+Deprecated: Function spliti() is deprecated
+Warning: spliti() expects parameter 3 to be long, array given
 null
 
 Arg value: array(1) [
     [0] =>
     int(1)
 ]
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, array given
+Deprecated: Function spliti() is deprecated
+Warning: spliti() expects parameter 3 to be long, array given
 null
 
 Arg value: array(2) [
@@ -127,8 +127,8 @@ Arg value: array(2) [
     [1] =>
     int(2)
 ]
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, array given
+Deprecated: Function spliti() is deprecated
+Warning: spliti() expects parameter 3 to be long, array given
 null
 
 Arg value: array(2) [
@@ -137,44 +137,44 @@ Arg value: array(2) [
     ["item"] =>
     string(3) "pen"
 ]
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, array given
+Deprecated: Function spliti() is deprecated
+Warning: spliti() expects parameter 3 to be long, array given
 null
 
 Arg value: null
-Error: Function spliti() is deprecated
+Deprecated: Function spliti() is deprecated
 array(1) [
     [0] =>
     string(9) "1 2 3 4 5"
 ]
 
 Arg value: bool(true)
-Error: Function spliti() is deprecated
+Deprecated: Function spliti() is deprecated
 array(1) [
     [0] =>
     string(9) "1 2 3 4 5"
 ]
 
 Arg value: bool(false)
-Error: Function spliti() is deprecated
+Deprecated: Function spliti() is deprecated
 array(1) [
     [0] =>
     string(9) "1 2 3 4 5"
 ]
 
 Arg value: string(0) ""
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, string given
+Deprecated: Function spliti() is deprecated
+Warning: spliti() expects parameter 3 to be long, string given
 null
 
 Arg value: string(6) "string"
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, string given
+Deprecated: Function spliti() is deprecated
+Warning: spliti() expects parameter 3 to be long, string given
 null
 
 Arg value: object(stdClass) {}
-Error: Function spliti() is deprecated
-Error: spliti() expects parameter 3 to be long, object given
+Deprecated: Function spliti() is deprecated
+Warning: spliti() expects parameter 3 to be long, object given
 null
 
 Done

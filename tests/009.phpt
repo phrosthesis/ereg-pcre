@@ -3,17 +3,18 @@ Test split()
 --FILE--
 <?php
 
-$a = split('[[:space:]]', "this is\ta\ntest");
-echo count($a), PHP_EOL;
-for ($i = 0; $i < count($a); $i++) {
-    echo $a[$i], PHP_EOL;
-}
+test_dump(split('[[:space:]]', "this is\ta\ntest"));
 
 ?>
 --EXPECTF--
-Deprecated: Function split() is deprecated in %s on line %d
-4
-this
-is
-a
-test
+Deprecated: Function split() is deprecated
+array(4) [
+    [0] =>
+    string(4) "this"
+    [1] =>
+    string(2) "is"
+    [2] =>
+    string(1) "a"
+    [3] =>
+    string(4) "test"
+]

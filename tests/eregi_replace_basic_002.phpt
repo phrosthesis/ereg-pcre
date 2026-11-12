@@ -12,28 +12,35 @@ Test eregi_replace() function : basic functionality - a few non-matches
 
 $replacement = 'r';
 
-var_dump(eregi_replace('[A-Z]', $replacement, '0'));
-var_dump(eregi_replace('(a){4}', $replacement, 'aaa'));
-var_dump(eregi_replace('^a', $replacement, 'ba'));
-var_dump(eregi_replace('b$', $replacement, 'ba'));
-var_dump(eregi_replace('[:alpha:]', $replacement, 'x'));
+echo PHP_EOL;
+test_dump(eregi_replace('[A-Z]', $replacement, '0'));
+echo PHP_EOL;
+test_dump(eregi_replace('(a){4}', $replacement, 'aaa'));
+echo PHP_EOL;
+test_dump(eregi_replace('^a', $replacement, 'ba'));
+echo PHP_EOL;
+test_dump(eregi_replace('b$', $replacement, 'ba'));
+echo PHP_EOL;
+test_dump(eregi_replace('[:alpha:]', $replacement, 'x'));
+echo PHP_EOL;
 
 echo 'Done';
 
 ?>
 --EXPECTF--
-Deprecated: Function eregi_replace() is deprecated in %s on line %d
+Deprecated: Function eregi_replace() is deprecated
 string(1) "0"
 
-Deprecated: Function eregi_replace() is deprecated in %s on line %d
+Deprecated: Function eregi_replace() is deprecated
 string(3) "aaa"
 
-Deprecated: Function eregi_replace() is deprecated in %s on line %d
+Deprecated: Function eregi_replace() is deprecated
 string(2) "ba"
 
-Deprecated: Function eregi_replace() is deprecated in %s on line %d
+Deprecated: Function eregi_replace() is deprecated
 string(2) "ba"
 
-Deprecated: Function eregi_replace() is deprecated in %s on line %d
+Deprecated: Function eregi_replace() is deprecated
 string(1) "x"
+
 Done

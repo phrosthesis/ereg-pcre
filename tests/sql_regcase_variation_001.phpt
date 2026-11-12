@@ -67,60 +67,60 @@ echo PHP_EOL, 'Done';
 *** Testing sql_regcase() : usage variations ***
 
 Arg value: int(0)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(1) "0"
 
 Arg value: int(1)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(1) "1"
 
 Arg value: int(12345)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(5) "12345"
 
 Arg value: int(-2345)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(5) "-2345"
 
 Arg value: float(10.5)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(4) "10.5"
 
 Arg value: float(-10.5)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(5) "-10.5"
 
 Arg value: float(101234567000)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(12) "101234567000"
 
 Arg value: float(1.07654321E-9)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(16) "1.07654321[Ee]-9"
 
 Arg value: float(0.5)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(3) "0.5"
 
 Arg value: array(0) []
-Error: Function sql_regcase() is deprecated
-Error: sql_regcase() expects parameter 1 to be string, array given
+Deprecated: Function sql_regcase() is deprecated
+Warning: sql_regcase() expects parameter 1 to be string, array given
 null
 
 Arg value: array(1) [
     [0] =>
     int(0)
 ]
-Error: Function sql_regcase() is deprecated
-Error: sql_regcase() expects parameter 1 to be string, array given
+Deprecated: Function sql_regcase() is deprecated
+Warning: sql_regcase() expects parameter 1 to be string, array given
 null
 
 Arg value: array(1) [
     [0] =>
     int(1)
 ]
-Error: Function sql_regcase() is deprecated
-Error: sql_regcase() expects parameter 1 to be string, array given
+Deprecated: Function sql_regcase() is deprecated
+Warning: sql_regcase() expects parameter 1 to be string, array given
 null
 
 Arg value: array(2) [
@@ -129,8 +129,8 @@ Arg value: array(2) [
     [1] =>
     int(2)
 ]
-Error: Function sql_regcase() is deprecated
-Error: sql_regcase() expects parameter 1 to be string, array given
+Deprecated: Function sql_regcase() is deprecated
+Warning: sql_regcase() expects parameter 1 to be string, array given
 null
 
 Arg value: array(2) [
@@ -139,29 +139,29 @@ Arg value: array(2) [
     ["item"] =>
     string(3) "pen"
 ]
-Error: Function sql_regcase() is deprecated
-Error: sql_regcase() expects parameter 1 to be string, array given
+Deprecated: Function sql_regcase() is deprecated
+Warning: sql_regcase() expects parameter 1 to be string, array given
 null
 
 Arg value: null
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(0) ""
 
 Arg value: bool(true)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(1) "1"
 
 Arg value: bool(false)
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(0) ""
 
 Arg value: string(0) ""
-Error: Function sql_regcase() is deprecated
+Deprecated: Function sql_regcase() is deprecated
 string(0) ""
 
 Arg value: object(stdClass) {}
-Error: Function sql_regcase() is deprecated
-Error: sql_regcase() expects parameter 1 to be string, object given
+Deprecated: Function sql_regcase() is deprecated
+Warning: sql_regcase() expects parameter 1 to be string, object given
 null
 
 Done

@@ -18,104 +18,76 @@ echo '*** Testing ereg() : error conditions ***', PHP_EOL;
 
 $regs = 'original';
 
-var_dump(ereg('', 'hello'));
-var_dump(ereg('c(d', 'hello'));
-var_dump(ereg('a[b', 'hello'));
-var_dump(ereg('c(d', 'hello'));
-var_dump(ereg('*', 'hello'));
-var_dump(ereg('+', 'hello'));
-var_dump(ereg('?', 'hello'));
-var_dump(ereg('(+?*)', 'hello', $regs));
-var_dump(ereg('h{256}', 'hello'));
-var_dump(ereg('h|', 'hello'));
-var_dump(ereg('h{0}', 'hello'));
-var_dump(ereg('h{2,1}', 'hello'));
-var_dump(ereg('[a-c-e]', 'd'));
-var_dump(ereg('\\', 'x'));
-var_dump(ereg('([9-0])', '1', $regs));
+test_dump(ereg('', 'hello'));
+test_dump(ereg('c(d', 'hello'));
+test_dump(ereg('a[b', 'hello'));
+test_dump(ereg('c(d', 'hello'));
+test_dump(ereg('*', 'hello'));
+test_dump(ereg('+', 'hello'));
+test_dump(ereg('?', 'hello'));
+test_dump(ereg('(+?*)', 'hello', $regs));
+test_dump(ereg('h{256}', 'hello'));
+test_dump(ereg('h|', 'hello'));
+test_dump(ereg('h{0}', 'hello'));
+test_dump(ereg('h{2,1}', 'hello'));
+test_dump(ereg('[a-c-e]', 'd'));
+test_dump(ereg('\\', 'x'));
+test_dump(ereg('([9-0])', '1', $regs));
 
 //ensure $regs unchanged
-var_dump($regs);
+echo PHP_EOL;
+test_dump($regs);
 
 echo 'Done';
 
 ?>
 --EXPECTF--
 *** Testing ereg() : error conditions ***
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_EMPTY in %s on line %d
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_EMPTY
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_EPAREN
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_EBRACK
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_EPAREN
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_BADRPT
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_BADRPT
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_BADRPT
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_BADRPT
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_BADBR
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_EMPTY
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_EMPTY
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_BADBR
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_ERANGE
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_EESCAPE
+bool(false)
+Deprecated: Function ereg() is deprecated
+Warning: ereg(): REG_ERANGE
 bool(false)
 
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_EPAREN in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_EBRACK in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_EPAREN in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_BADRPT in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_BADRPT in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_BADRPT in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_BADRPT in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_BADBR in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_EMPTY in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_EMPTY in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_BADBR in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_ERANGE in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_EESCAPE in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-
-Warning: ereg(): REG_ERANGE in %s on line %d
-bool(false)
 string(8) "original"
 Done

@@ -10,8 +10,6 @@ Test eregi_replace() function : usage variations - unexpected type arg 1
  * Alias to functions:
  */
 
-set_error_handler('test_error_handler');
-
 echo '*** Testing eregi_replace() : usage variations ***', PHP_EOL;
 
 // Initialise function arguments not being substituted (if any)
@@ -76,111 +74,111 @@ echo PHP_EOL, 'Done';
 *** Testing eregi_replace() : usage variations ***
 
 Arg value: '0'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Arg value: '1'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Arg value: int(12345)
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Arg value: int(-2345)
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Arg value: float(10.5)
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Arg value: float(-10.5)
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Arg value: '101234567000'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Arg value: '1.07654321E-9'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Arg value: float(0.5)
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Error: Array to string conversion
 Arg value: 'Array'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Error: Array to string conversion
 Arg value: 'Array'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Error: Array to string conversion
 Arg value: 'Array'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Error: Array to string conversion
 Arg value: 'Array'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Error: Array to string conversion
 Arg value: 'Array'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Arg value: ''
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Arg value: ''
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Arg value: '1'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Arg value: ''
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Arg value: '1'
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 string(8) "original"
 
 Arg value: ''
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Arg value: ''
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Arg value: ''
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: eregi_replace(): REG_EMPTY
 bool(false)
 
 Error: Object of class stdClass could not be converted to string
 Arg value: ''
-Error: Function eregi_replace() is deprecated
+Deprecated: Function eregi_replace() is deprecated
 Error: Object of class stdClass could not be converted to int
 string(8) "original"
 

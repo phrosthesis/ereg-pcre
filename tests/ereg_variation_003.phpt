@@ -10,8 +10,6 @@ Test ereg() function : usage variations - unexpected type for arg 3
  * Alias to functions:
  */
 
-set_error_handler('test_error_handler');
-
 echo '*** Testing ereg() : usage variations ***', PHP_EOL;
 
 // Initialise function arguments not being substituted (if any)
@@ -66,7 +64,7 @@ echo PHP_EOL, 'Done';
 *** Testing ereg() : usage variations ***
 
 Arg value: int(0)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -76,7 +74,7 @@ array(2) [
 ]
 
 Arg value: int(1)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -86,7 +84,7 @@ array(2) [
 ]
 
 Arg value: int(12345)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -96,7 +94,7 @@ array(2) [
 ]
 
 Arg value: int(-2345)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -106,7 +104,7 @@ array(2) [
 ]
 
 Arg value: float(10.5)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -116,7 +114,7 @@ array(2) [
 ]
 
 Arg value: float(-10.5)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -126,7 +124,7 @@ array(2) [
 ]
 
 Arg value: float(101234567000)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -136,7 +134,7 @@ array(2) [
 ]
 
 Arg value: float(1.07654321E-9)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -146,7 +144,7 @@ array(2) [
 ]
 
 Arg value: float(0.5)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -156,7 +154,7 @@ array(2) [
 ]
 
 Arg value: null
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -166,7 +164,7 @@ array(2) [
 ]
 
 Arg value: bool(true)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -176,7 +174,7 @@ array(2) [
 ]
 
 Arg value: bool(false)
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -186,7 +184,7 @@ array(2) [
 ]
 
 Arg value: string(0) ""
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -196,7 +194,7 @@ array(2) [
 ]
 
 Arg value: string(6) "string"
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>
@@ -206,7 +204,7 @@ array(2) [
 ]
 
 Arg value: object(stdClass) {}
-Error: Function ereg() is deprecated
+Deprecated: Function ereg() is deprecated
 int(6)
 array(2) [
     [0] =>

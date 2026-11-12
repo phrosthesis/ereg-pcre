@@ -12,32 +12,30 @@ Test eregi() function : basic functionality - a few non-matches
 
 $regs = 'original';
 
-var_dump(eregi('[A-Z]', '0', $regs));
-var_dump(eregi('(a){4}', 'aaa', $regs));
-var_dump(eregi('^a', 'ba', $regs));
-var_dump(eregi('b$', 'ba', $regs));
-var_dump(eregi('[:alpha:]', 'x', $regs));
+test_dump(eregi('[A-Z]', '0', $regs));
+test_dump(eregi('(a){4}', 'aaa', $regs));
+test_dump(eregi('^a', 'ba', $regs));
+test_dump(eregi('b$', 'ba', $regs));
+test_dump(eregi('[:alpha:]', 'x', $regs));
 
 // Ensure $regs is unchanged
-var_dump($regs);
+echo PHP_EOL;
+test_dump($regs);
 
 echo 'Done';
 
 ?>
 --EXPECTF--
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
+bool(false)
+Deprecated: Function eregi() is deprecated
+bool(false)
+Deprecated: Function eregi() is deprecated
+bool(false)
+Deprecated: Function eregi() is deprecated
+bool(false)
+Deprecated: Function eregi() is deprecated
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-bool(false)
-
-Deprecated: Function eregi() is deprecated in %s on line %d
-bool(false)
-
-Deprecated: Function eregi() is deprecated in %s on line %d
-bool(false)
-
-Deprecated: Function eregi() is deprecated in %s on line %d
-bool(false)
 string(8) "original"
 Done

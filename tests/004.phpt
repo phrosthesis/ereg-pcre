@@ -13,8 +13,7 @@ if (!ereg(".*doesn't exist.*", $a)) {
 
 ?>
 --EXPECTF--
-Deprecated: Function ereg() is deprecated in %s on line %d
+Deprecated: Function ereg() is deprecated
 ok
-
-Deprecated: Function ereg() is deprecated in %s on line %d
+Deprecated: Function ereg() is deprecated
 ok

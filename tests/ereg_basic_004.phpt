@@ -12,36 +12,33 @@ Test ereg() function : basic functionality - a few non-matches
 
 $regs = 'original';
 
-var_dump(ereg('A', 'a', $regs));
-var_dump(ereg('[A-Z]', '0', $regs));
-var_dump(ereg('(a){4}', 'aaa', $regs));
-var_dump(ereg('^a', 'ba', $regs));
-var_dump(ereg('b$', 'ba', $regs));
-var_dump(ereg('[:alpha:]', 'x', $regs));
+test_dump(ereg('A', 'a', $regs));
+test_dump(ereg('[A-Z]', '0', $regs));
+test_dump(ereg('(a){4}', 'aaa', $regs));
+test_dump(ereg('^a', 'ba', $regs));
+test_dump(ereg('b$', 'ba', $regs));
+test_dump(ereg('[:alpha:]', 'x', $regs));
 
 // Ensure $regs is unchanged
-var_dump($regs);
+echo PHP_EOL;
+test_dump($regs);
 
 echo 'Done';
 
 ?>
 --EXPECTF--
-Deprecated: Function ereg() is deprecated in %s on line %d
+Deprecated: Function ereg() is deprecated
+bool(false)
+Deprecated: Function ereg() is deprecated
+bool(false)
+Deprecated: Function ereg() is deprecated
+bool(false)
+Deprecated: Function ereg() is deprecated
+bool(false)
+Deprecated: Function ereg() is deprecated
+bool(false)
+Deprecated: Function ereg() is deprecated
 bool(false)
 
-Deprecated: Function ereg() is deprecated in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-bool(false)
-
-Deprecated: Function ereg() is deprecated in %s on line %d
-bool(false)
 string(8) "original"
 Done

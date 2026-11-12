@@ -10,13 +10,15 @@ Test sql_regcase() function : basic functionality
  * Alias to functions: msql_regcase
  */
 
-echo "*** Testing sql_regcase() : basic functionality ***\n";
+echo '*** Testing sql_regcase() : basic functionality ***', PHP_EOL;
 
 // Initialise all required variables
 $string = 'string_Val-0';
 
 // Calling sql_regcase() with all possible arguments
-var_dump(sql_regcase($string));
+echo PHP_EOL;
+test_dump(sql_regcase($string));
+echo PHP_EOL;
 
 echo 'Done';
 
@@ -24,6 +26,7 @@ echo 'Done';
 --EXPECTF--
 *** Testing sql_regcase() : basic functionality ***
 
-Deprecated: Function sql_regcase() is deprecated in %s on line %d
+Deprecated: Function sql_regcase() is deprecated
 string(39) "[Ss][Tt][Rr][Ii][Nn][Gg]_[Vv][Aa][Ll]-0"
+
 Done

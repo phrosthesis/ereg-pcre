@@ -33,7 +33,7 @@ echo PHP_EOL, 'Done';
 
 --> Pattern: '..(a|b|c)(a|b|c)..'; string: '--- ab ---'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(6)
 array(3) {
   [0]=>
@@ -46,7 +46,7 @@ array(3) {
 
 --> Pattern: '()'; string: ''
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(1)
 array(2) {
   [0]=>
@@ -57,7 +57,7 @@ array(2) {
 
 --> Pattern: '()'; string: 'abcdef'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(1)
 array(2) {
   [0]=>
@@ -68,7 +68,7 @@ array(2) {
 
 --> Pattern: '[x]|[^x]'; string: 'abcdef'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(1)
 array(1) {
   [0]=>
@@ -77,7 +77,7 @@ array(1) {
 
 --> Pattern: '(a{1})(a{1,}) (b{1,3}) (c+) (d?ddd|e)'; string: '--- aaa bbb ccc ddd ---'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(15)
 array(6) {
   [0]=>
@@ -96,7 +96,7 @@ array(6) {
 
 --> Pattern: '\\\`\^\.\[\$\(\)\|\*\+\?\{\''; string: '\`^.[$()|*+?{''
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(14)
 array(1) {
   [0]=>
@@ -105,7 +105,7 @@ array(1) {
 
 --> Pattern: '\a'; string: 'a'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(1)
 array(1) {
   [0]=>
@@ -114,7 +114,7 @@ array(1) {
 
 --> Pattern: '[0-9][^0-9]'; string: '2a'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(2)
 array(1) {
   [0]=>
@@ -123,7 +123,7 @@ array(1) {
 
 --> Pattern: '^[[:alnum:]]{62,62}$'; string: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(62)
 array(1) {
   [0]=>
@@ -132,7 +132,7 @@ array(1) {
 
 --> Pattern: '^[[:digit:]]{5}'; string: '0123456789'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(5)
 array(1) {
   [0]=>
@@ -141,7 +141,7 @@ array(1) {
 
 --> Pattern: '[[:digit:]]{5}$'; string: '0123456789'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(5)
 array(1) {
   [0]=>
@@ -151,7 +151,7 @@ array(1) {
 --> Pattern: '[[:blank:]]{1,10}'; string: '
  	'
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(2)
 array(1) {
   [0]=>
@@ -160,7 +160,7 @@ array(1) {
 
 --> Pattern: '[[:print:]]{3}'; string: ' a '
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(3)
 array(1) {
   [0]=>

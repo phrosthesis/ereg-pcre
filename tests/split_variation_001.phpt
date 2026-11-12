@@ -42,16 +42,12 @@ $values = [
 
     // null data
     null,
-    null,
 
     // boolean data
     true,
     false,
-    true,
-    false,
 
     // empty data
-    '',
     '',
 
     // object data
@@ -61,12 +57,9 @@ $values = [
 // loop through each element of the array for pattern
 
 foreach ($values as $value) {
-    try {
-        echo PHP_EOL, "Arg value: '$value'", PHP_EOL;
-    } catch (Throwable $err) {
-        echo 'Error: ', $err->getMessage(), PHP_EOL, "Arg value: ''", PHP_EOL;
-    }
-    var_dump(split($value, $string, $limit));
+    echo PHP_EOL, 'Arg value: ';
+    test_dump($value);
+    test_dump(split($value, $string, $limit));
 }
 
 echo PHP_EOL, 'Done';
@@ -75,165 +68,147 @@ echo PHP_EOL, 'Done';
 --EXPECTF--
 *** Testing split() : usage variations ***
 
-Arg value: '0'
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(16) "1 a 1 Array 1 c "
-}
+Arg value: int(0)
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(16) "1 a 1 Array 1 c "
+]
 
-Arg value: '1'
-Error: Function split() is deprecated
-array(4) {
-  [0]=>
-  string(0) ""
-  [1]=>
-  string(3) " a "
-  [2]=>
-  string(7) " Array "
-  [3]=>
-  string(3) " c "
-}
+Arg value: int(1)
+Deprecated: Function split() is deprecated
+array(4) [
+    [0] =>
+    string(0) ""
+    [1] =>
+    string(3) " a "
+    [2] =>
+    string(7) " Array "
+    [3] =>
+    string(3) " c "
+]
 
 Arg value: int(12345)
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(16) "1 a 1 Array 1 c "
-}
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(16) "1 a 1 Array 1 c "
+]
 
 Arg value: int(-2345)
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(16) "1 a 1 Array 1 c "
-}
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(16) "1 a 1 Array 1 c "
+]
 
 Arg value: float(10.5)
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(16) "1 a 1 Array 1 c "
-}
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(16) "1 a 1 Array 1 c "
+]
 
 Arg value: float(-10.5)
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(16) "1 a 1 Array 1 c "
-}
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(16) "1 a 1 Array 1 c "
+]
 
-Arg value: '101234567000'
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(16) "1 a 1 Array 1 c "
-}
+Arg value: float(101234567000)
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(16) "1 a 1 Array 1 c "
+]
 
-Arg value: '1.07654321E-9'
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(16) "1 a 1 Array 1 c "
-}
+Arg value: float(1.07654321E-9)
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(16) "1 a 1 Array 1 c "
+]
 
 Arg value: float(0.5)
-Error: Function split() is deprecated
-array(1) {
-  [0]=>
-  string(16) "1 a 1 Array 1 c "
-}
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(16) "1 a 1 Array 1 c "
+]
 
-Error: Array to string conversion
-Arg value: 'Array'
-Error: Function split() is deprecated
-Error: split() expects parameter 1 to be string, array given
-NULL
+Arg value: array(0) []
+Deprecated: Function split() is deprecated
+Warning: split() expects parameter 1 to be string, array given
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
-Error: Function split() is deprecated
-Error: split() expects parameter 1 to be string, array given
-NULL
+Arg value: array(1) [
+    [0] =>
+    int(0)
+]
+Deprecated: Function split() is deprecated
+Warning: split() expects parameter 1 to be string, array given
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
-Error: Function split() is deprecated
-Error: split() expects parameter 1 to be string, array given
-NULL
+Arg value: array(1) [
+    [0] =>
+    int(1)
+]
+Deprecated: Function split() is deprecated
+Warning: split() expects parameter 1 to be string, array given
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
-Error: Function split() is deprecated
-Error: split() expects parameter 1 to be string, array given
-NULL
+Arg value: array(2) [
+    [0] =>
+    int(1)
+    [1] =>
+    int(2)
+]
+Deprecated: Function split() is deprecated
+Warning: split() expects parameter 1 to be string, array given
+null
 
-Error: Array to string conversion
-Arg value: 'Array'
-Error: Function split() is deprecated
-Error: split() expects parameter 1 to be string, array given
-NULL
+Arg value: array(2) [
+    ["color"] =>
+    string(3) "red"
+    ["item"] =>
+    string(3) "pen"
+]
+Deprecated: Function split() is deprecated
+Warning: split() expects parameter 1 to be string, array given
+null
 
-Arg value: ''
-Error: Function split() is deprecated
-Error: split(): REG_EMPTY
+Arg value: null
+Deprecated: Function split() is deprecated
+Warning: split(): REG_EMPTY
 bool(false)
 
-Arg value: ''
-Error: Function split() is deprecated
-Error: split(): REG_EMPTY
+Arg value: bool(true)
+Deprecated: Function split() is deprecated
+array(4) [
+    [0] =>
+    string(0) ""
+    [1] =>
+    string(3) " a "
+    [2] =>
+    string(7) " Array "
+    [3] =>
+    string(3) " c "
+]
+
+Arg value: bool(false)
+Deprecated: Function split() is deprecated
+Warning: split(): REG_EMPTY
 bool(false)
 
-Arg value: '1'
-Error: Function split() is deprecated
-array(4) {
-  [0]=>
-  string(0) ""
-  [1]=>
-  string(3) " a "
-  [2]=>
-  string(7) " Array "
-  [3]=>
-  string(3) " c "
-}
-
-Arg value: ''
-Error: Function split() is deprecated
-Error: split(): REG_EMPTY
+Arg value: string(0) ""
+Deprecated: Function split() is deprecated
+Warning: split(): REG_EMPTY
 bool(false)
 
-Arg value: '1'
-Error: Function split() is deprecated
-array(4) {
-  [0]=>
-  string(0) ""
-  [1]=>
-  string(3) " a "
-  [2]=>
-  string(7) " Array "
-  [3]=>
-  string(3) " c "
-}
-
-Arg value: ''
-Error: Function split() is deprecated
-Error: split(): REG_EMPTY
-bool(false)
-
-Arg value: ''
-Error: Function split() is deprecated
-Error: split(): REG_EMPTY
-bool(false)
-
-Arg value: ''
-Error: Function split() is deprecated
-Error: split(): REG_EMPTY
-bool(false)
-
-Error: Object of class stdClass could not be converted to string
-Arg value: ''
-Error: Function split() is deprecated
-Error: split() expects parameter 1 to be string, object given
-NULL
+Arg value: object(stdClass) {}
+Deprecated: Function split() is deprecated
+Warning: split() expects parameter 1 to be string, object given
+null
 
 Done

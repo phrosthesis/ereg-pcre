@@ -8,5 +8,5 @@ echo ereg_replace('a(.*)b(.*)c', '\\1', $a);
 
 ?>
 --EXPECTF--
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 \2

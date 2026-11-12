@@ -10,8 +10,6 @@ Test ereg_replace() function : usage variations - unexpected type arg 1
  * Alias to functions:
  */
 
-set_error_handler('test_error_handler');
-
 echo '*** Testing ereg_replace() : usage variations ***', PHP_EOL;
 
 // Initialise function arguments not being substituted (if any)
@@ -69,46 +67,46 @@ echo PHP_EOL, 'Done';
 *** Testing ereg_replace() : usage variations ***
 
 Arg value: int(0)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 Error: ereg_replace(): REG_EMPTY
 bool(false)
 
 Arg value: int(1)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: int(12345)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: int(-2345)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: float(10.5)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: float(-10.5)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: float(101234567000)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: float(1.07654321E-9)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 Error: ereg_replace(): REG_EMPTY
 bool(false)
 
 Arg value: float(0.5)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 Error: ereg_replace(): REG_EMPTY
 bool(false)
 
 Arg value: array(0) []
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 Error: ereg_replace(): REG_EMPTY
 bool(false)
 
@@ -116,14 +114,14 @@ Arg value: array(1) [
     [0]=>
     int(0)
 ]
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: array(1) [
     [0]=>
     int(1)
 ]
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: array(2) [
@@ -132,7 +130,7 @@ Arg value: array(2) [
     [1] =>
     int(2)
 ]
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: array(2) [
@@ -141,30 +139,30 @@ Arg value: array(2) [
     ["item"] =>
     string(3) "pen"
 ]
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: null
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 Error: ereg_replace(): REG_EMPTY
 bool(false)
 
 Arg value: bool(true)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 string(8) "original"
 
 Arg value: bool(false)
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 Error: ereg_replace(): REG_EMPTY
 bool(false)
 
 Arg value: string(0) ""
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 Error: ereg_replace(): REG_EMPTY
 bool(false)
 
 Arg value: object(stdClass) {}
-Error: Function ereg_replace() is deprecated
+Deprecated: Function ereg_replace() is deprecated
 Error: Object of class stdClass could not be converted to int
 string(8) "original"
 

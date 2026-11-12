@@ -14,8 +14,12 @@ echo "*** Testing split() : usage variations ***\n";
 
 $pattern = '[[:space:]]';
 $string = '1 2 3 4 5';
-var_dump(split($pattern, $string, 0));
-var_dump(split($pattern, $string, -10));
+
+echo PHP_EOL;
+test_dump(split($pattern, $string, 0));
+echo PHP_EOL;
+test_dump(split($pattern, $string, -10));
+echo PHP_EOL;
 
 echo 'Done';
 
@@ -23,15 +27,16 @@ echo 'Done';
 --EXPECTF--
 *** Testing split() : usage variations ***
 
-Deprecated: Function split() is deprecated in %s on line %d
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
 
-Deprecated: Function split() is deprecated in %s on line %d
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+Deprecated: Function split() is deprecated
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
+
 Done

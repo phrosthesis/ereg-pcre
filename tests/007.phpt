@@ -9,5 +9,5 @@ echo 'strlen($b)=', strlen($b);
 
 ?>
 --EXPECTF--
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 strlen($b)=0

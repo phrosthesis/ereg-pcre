@@ -37,15 +37,15 @@ echo 'Done';
 
 -- Testing ereg() function with more than expected no. of arguments --
 
-Deprecated: Function ereg() is deprecated in %s on line %d
+Deprecated: Function ereg() is deprecated
 
-Warning: ereg() expects at most 3 parameters, 4 given in %s on line %d
+Warning: ereg() expects at most 3 parameters, 4 given
 NULL
 
 -- Testing ereg() function with less than expected no. of arguments --
 
-Deprecated: Function ereg() is deprecated in %s on line %d
+Deprecated: Function ereg() is deprecated
 
-Warning: ereg() expects at least 2 parameters, 1 given in %s on line %d
+Warning: ereg() expects at least 2 parameters, 1 given
 NULL
 Done

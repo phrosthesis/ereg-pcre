@@ -10,8 +10,6 @@ Test eregi() function : usage variations - unexpected type arg 1
  * Alias to functions:
  */
 
-set_error_handler('test_error_handler');
-
 echo '*** Testing eregi() : usage variations ***', PHP_EOL;
 
 // Initialise function arguments not being substituted (if any)
@@ -69,43 +67,43 @@ echo PHP_EOL, 'Done';
 *** Testing eregi() : usage variations ***
 
 Arg value: int(0)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 bool(false)
 
 Arg value: int(1)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 int(1)
 
 Arg value: int(12345)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 bool(false)
 
 Arg value: int(-2345)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 bool(false)
 
 Arg value: float(10.5)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 bool(false)
 
 Arg value: float(-10.5)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 bool(false)
 
 Arg value: float(101234567000)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 bool(false)
 
 Arg value: float(1.07654321E-9)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 bool(false)
 
 Arg value: float(0.5)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 bool(false)
 
 Arg value: array(0) []
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 Error: Array to string conversion
 bool(false)
 
@@ -113,7 +111,7 @@ Arg value: array(1) [
     [0] =>
     int(0)
 ]
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 Error: Array to string conversion
 bool(false)
 
@@ -121,7 +119,7 @@ Arg value: array(1) [
     [0] =>
     int(1)
 ]
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 Error: Array to string conversion
 bool(false)
 
@@ -131,7 +129,7 @@ Arg value: array(2) [
     [1] =>
     int(2)
 ]
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 Error: Array to string conversion
 bool(false)
 
@@ -141,31 +139,31 @@ Arg value: array(2) [
     ["item"] =>
     string(3) "pen"
 ]
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 Error: Array to string conversion
 bool(false)
 
 Arg value: null
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 Error: eregi(): REG_EMPTY
 bool(false)
 
 Arg value: bool(true)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 int(1)
 
 Arg value: bool(false)
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 Error: eregi(): REG_EMPTY
 bool(false)
 
 Arg value: string(0) ""
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 Error: eregi(): REG_EMPTY
 bool(false)
 
 Arg value: object(stdClass) {}
-Error: Function eregi() is deprecated
+Deprecated: Function eregi() is deprecated
 Error: Object of class stdClass could not be converted to string
 Error: Object of class stdClass to string conversion
 bool(false)

@@ -10,12 +10,16 @@ Test spliti() function : usage variations - out-of-range values for limit
  * Alias to functions:
  */
 
-echo "*** Testing spliti() : usage variations ***\n";
+echo '*** Testing spliti() : usage variations ***', PHP_EOL;
 
 $pattern = '[[:space:]]';
 $string = '1 2 3 4 5';
-var_dump(spliti($pattern, $string, 0));
-var_dump(spliti($pattern, $string, -10));
+
+echo PHP_EOL;
+test_dump(spliti($pattern, $string, 0));
+echo PHP_EOL;
+test_dump(spliti($pattern, $string, -10));
+echo PHP_EOL;
 
 echo 'Done';
 
@@ -23,15 +27,16 @@ echo 'Done';
 --EXPECTF--
 *** Testing spliti() : usage variations ***
 
-Deprecated: Function spliti() is deprecated in %s on line %d
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+Deprecated: Function spliti() is deprecated
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
 
-Deprecated: Function spliti() is deprecated in %s on line %d
-array(1) {
-  [0]=>
-  string(9) "1 2 3 4 5"
-}
+Deprecated: Function spliti() is deprecated
+array(1) [
+    [0] =>
+    string(9) "1 2 3 4 5"
+]
+
 Done

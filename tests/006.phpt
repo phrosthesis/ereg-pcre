@@ -8,5 +8,5 @@ echo ereg_replace('^This', 'That', $a);
 
 ?>
 --EXPECTF--
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 That is a nice and simple string

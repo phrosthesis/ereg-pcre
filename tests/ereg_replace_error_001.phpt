@@ -34,15 +34,15 @@ echo 'Done';
 
 -- Testing ereg_replace() function with more than expected no. of arguments --
 
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 
-Warning: ereg_replace() expects exactly 3 parameters, 4 given in %s on line %d
+Warning: ereg_replace() expects exactly 3 parameters, 4 given
 NULL
 
 -- Testing ereg_replace() function with less than expected no. of arguments --
 
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 
-Warning: ereg_replace() expects exactly 3 parameters, 2 given in %s on line %d
+Warning: ereg_replace() expects exactly 3 parameters, 2 given
 NULL
 Done

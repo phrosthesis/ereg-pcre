@@ -117,5 +117,28 @@ function test_quote(string $string): string
  */
 function test_error_handler(int $err_no, string $err_msg)
 {
-    echo "Error: $err_msg", PHP_EOL;
+    switch ($err_no) {
+        case E_DEPRECATED:
+        case E_USER_DEPRECATED:
+            echo 'Deprecated: ';
+            break;
+
+        case E_NOTICE:
+        case E_USER_NOTICE:
+            echo 'Notice: ';
+            break;
+
+        case E_WARNING:
+        case E_USER_WARNING:
+            echo 'Warning: ';
+            break;
+
+        default:
+            echo 'Error: ';
+            break;
+    }
+
+    echo $err_msg, PHP_EOL;
 }
+
+set_error_handler('test_error_handler');

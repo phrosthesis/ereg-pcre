@@ -32,14 +32,14 @@ echo 'Done';
 --EXPECTF--
 *** Testing eregi() : basic functionality ***
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(5)
 array(1) {
   [0]=>
   string(5) "WORDS"
 }
 
-Deprecated: Function eregi() is deprecated in %s on line %d
+Deprecated: Function eregi() is deprecated
 int(10)
 array(1) {
   [0]=>

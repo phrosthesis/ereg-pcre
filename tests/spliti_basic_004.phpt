@@ -12,44 +12,50 @@ Test spliti() function : basic functionality - confirm case insensitivity
 
 $replacement = 'r';
 
-var_dump(spliti('[a-z]', '--- A ---'));
-var_dump(spliti('[A-Z]', '--- a ---'));
-var_dump(spliti('[[:lower:]]', '--- A ---'));
-var_dump(spliti('[[:upper:]]', '--- a ---'));
+echo PHP_EOL;
+test_dump(spliti('[a-z]', '--- A ---'));
+echo PHP_EOL;
+test_dump(spliti('[A-Z]', '--- a ---'));
+echo PHP_EOL;
+test_dump(spliti('[[:lower:]]', '--- A ---'));
+echo PHP_EOL;
+test_dump(spliti('[[:upper:]]', '--- a ---'));
+echo PHP_EOL;
 
 echo 'Done';
 
 ?>
 --EXPECTF--
-Deprecated: Function spliti() is deprecated in %s on line %d
-array(2) {
-  [0]=>
-  string(4) "--- "
-  [1]=>
-  string(4) " ---"
-}
+Deprecated: Function spliti() is deprecated
+array(2) [
+    [0] =>
+    string(4) "--- "
+    [1] =>
+    string(4) " ---"
+]
 
-Deprecated: Function spliti() is deprecated in %s on line %d
-array(2) {
-  [0]=>
-  string(4) "--- "
-  [1]=>
-  string(4) " ---"
-}
+Deprecated: Function spliti() is deprecated
+array(2) [
+    [0] =>
+    string(4) "--- "
+    [1] =>
+    string(4) " ---"
+]
 
-Deprecated: Function spliti() is deprecated in %s on line %d
-array(2) {
-  [0]=>
-  string(4) "--- "
-  [1]=>
-  string(4) " ---"
-}
+Deprecated: Function spliti() is deprecated
+array(2) [
+    [0] =>
+    string(4) "--- "
+    [1] =>
+    string(4) " ---"
+]
 
-Deprecated: Function spliti() is deprecated in %s on line %d
-array(2) {
-  [0]=>
-  string(4) "--- "
-  [1]=>
-  string(4) " ---"
-}
+Deprecated: Function spliti() is deprecated
+array(2) [
+    [0] =>
+    string(4) "--- "
+    [1] =>
+    string(4) " ---"
+]
+
 Done

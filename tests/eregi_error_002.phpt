@@ -14,28 +14,44 @@ Test eregi() function : error conditions - test bad regular expressions
  * Test bad regular expressions
  */
 
-echo "*** Testing eregi() : error conditions ***\n";
+echo '*** Testing eregi() : error conditions ***', PHP_EOL;
 
 $regs = 'original';
 
-var_dump(eregi('', 'hello'));
-var_dump(eregi('c(d', 'hello'));
-var_dump(eregi('a[b', 'hello'));
-var_dump(eregi('c(d', 'hello'));
-var_dump(eregi('*', 'hello'));
-var_dump(eregi('+', 'hello'));
-var_dump(eregi('?', 'hello'));
-var_dump(eregi('(+?*)', 'hello', $regs));
-var_dump(eregi('h{256}', 'hello'));
-var_dump(eregi('h|', 'hello'));
-var_dump(eregi('h{0}', 'hello'));
-var_dump(eregi('h{2,1}', 'hello'));
-var_dump(eregi('[a-c-e]', 'd'));
-var_dump(eregi('\\', 'x'));
-var_dump(eregi('([9-0])', '1', $regs));
+echo PHP_EOL;
+test_dump(eregi('', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('c(d', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('a[b', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('c(d', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('*', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('+', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('?', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('(+?*)', 'hello', $regs));
+echo PHP_EOL;
+test_dump(eregi('h{256}', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('h|', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('h{0}', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('h{2,1}', 'hello'));
+echo PHP_EOL;
+test_dump(eregi('[a-c-e]', 'd'));
+echo PHP_EOL;
+test_dump(eregi('\\', 'x'));
+echo PHP_EOL;
+test_dump(eregi('([9-0])', '1', $regs));
+echo PHP_EOL;
 
 //ensure $regs unchanged
-var_dump($regs);
+test_dump($regs);
 
 echo 'Done';
 
@@ -43,79 +59,65 @@ echo 'Done';
 --EXPECTF--
 *** Testing eregi() : error conditions ***
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_EMPTY in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_EMPTY
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_EPAREN in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_EPAREN
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_EBRACK in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_EBRACK
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_EPAREN in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_EPAREN
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_BADRPT in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_BADRPT
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_BADRPT in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_BADRPT
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_BADRPT in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_BADRPT
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_BADRPT in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_BADRPT
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_BADBR in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_BADBR
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_EMPTY in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_EMPTY
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_EMPTY in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_EMPTY
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_BADBR in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_BADBR
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_ERANGE in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_ERANGE
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_EESCAPE in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_EESCAPE
 bool(false)
 
-Deprecated: Function eregi() is deprecated in %s on line %d
-
-Warning: eregi(): REG_ERANGE in %s on line %d
+Deprecated: Function eregi() is deprecated
+Warning: eregi(): REG_ERANGE
 bool(false)
+
 string(8) "original"
 Done

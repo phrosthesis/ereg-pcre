@@ -12,32 +12,27 @@ Test ereg_replace() function : basic functionality - a few non-matches
 
 $replacement = 'r';
 
-var_dump(ereg_replace('A', $replacement, 'a'));
-var_dump(ereg_replace('[A-Z]', $replacement, '0'));
-var_dump(ereg_replace('(a){4}', $replacement, 'aaa'));
-var_dump(ereg_replace('^a', $replacement, 'ba'));
-var_dump(ereg_replace('b$', $replacement, 'ba'));
-var_dump(ereg_replace('[:alpha:]', $replacement, 'x'));
+test_dump(ereg_replace('A', $replacement, 'a'));
+test_dump(ereg_replace('[A-Z]', $replacement, '0'));
+test_dump(ereg_replace('(a){4}', $replacement, 'aaa'));
+test_dump(ereg_replace('^a', $replacement, 'ba'));
+test_dump(ereg_replace('b$', $replacement, 'ba'));
+test_dump(ereg_replace('[:alpha:]', $replacement, 'x'));
 
 echo 'Done';
 
 ?>
 --EXPECTF--
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 string(1) "a"
-
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 string(1) "0"
-
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 string(3) "aaa"
-
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 string(2) "ba"
-
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 string(2) "ba"
-
-Deprecated: Function ereg_replace() is deprecated in %s on line %d
+Deprecated: Function ereg_replace() is deprecated
 string(1) "x"
 Done

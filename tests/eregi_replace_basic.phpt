@@ -35,6 +35,6 @@ string(50) "UPPERCASE WORDS, lowercase words, MIxED CaSe woRdS"
 
 String after...
 
-Deprecated: Function eregi_replace() is deprecated in %s on line %d
+Deprecated: Function eregi_replace() is deprecated
 string(65) "UPPERCASE_characterS, lowercase_characters, MIxED CaSe_characterS"
 Done
